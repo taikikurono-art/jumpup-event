@@ -16,7 +16,6 @@
     min-height: 100vh;
   }
 
-  /* ── Hero ── */
   .hero {
     background: linear-gradient(135deg, #1a8fd1 0%, #0a5a8c 100%);
     padding: 3rem 1.5rem 2.5rem;
@@ -46,10 +45,8 @@
   .hero-title span { color: #ffd740; }
   .hero-sub { font-size: 13px; color: rgba(255,255,255,0.75); }
 
-  /* ── Container ── */
   .container { max-width: 720px; margin: 0 auto; padding: 2rem 1rem 4rem; }
 
-  /* ── Event Card ── */
   .event-card {
     background: #fff;
     border-radius: 20px;
@@ -90,7 +87,36 @@
     padding: 4px 10px; border-radius: 20px;
   }
 
-  /* ── Remaining Spots ── */
+  /* 詳細セクション */
+  .details-section {
+    padding: 0 1.5rem;
+    border-bottom: 1px solid #f0f4f8;
+  }
+  .details-section:empty { padding: 0; border: none; }
+  .details-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin: 1rem 0;
+  }
+  .details-table tr { border-bottom: 1px solid #f0f4f8; }
+  .details-table tr:last-child { border-bottom: none; }
+  .details-table td:first-child {
+    color: #7a9ab0;
+    font-weight: 700;
+    width: 90px;
+    padding: 8px 12px 8px 0;
+    vertical-align: top;
+    white-space: nowrap;
+  }
+  .details-table td:last-child {
+    color: #1a2a3a;
+    padding: 8px 0;
+    line-height: 1.6;
+    white-space: pre-wrap;
+  }
+
+  /* 残り枠 */
   .spots-section {
     padding: 1rem 1.5rem;
     border-bottom: 1px solid #f0f4f8;
@@ -100,17 +126,8 @@
   }
   .spots-bar-wrap { flex: 1; }
   .spots-label { font-size: 12px; color: #7a9ab0; margin-bottom: 4px; }
-  .spots-bar {
-    height: 8px;
-    background: #e8f0f8;
-    border-radius: 4px;
-    overflow: hidden;
-  }
-  .spots-fill {
-    height: 100%;
-    border-radius: 4px;
-    transition: width 0.6s ease;
-  }
+  .spots-bar { height: 8px; background: #e8f0f8; border-radius: 4px; overflow: hidden; }
+  .spots-fill { height: 100%; border-radius: 4px; transition: width 0.6s ease; }
   .fill-open { background: #1dba8a; }
   .fill-almost { background: #f5a623; }
   .fill-full { background: #e24b4a; }
@@ -128,7 +145,7 @@
   .badge-full { background: #FCEBEB; color: #A32D2D; }
   .badge-loading { background: #f0f4f8; color: #7a9ab0; }
 
-  /* ── Form Section ── */
+  /* フォーム */
   .form-section { padding: 1.25rem 1.5rem 1.5rem; }
   .form-toggle-btn {
     width: 100%;
@@ -158,22 +175,10 @@
     border: 1px solid #e0eaf4;
   }
   .form-embed.open { display: block; }
-  .form-embed iframe {
-    width: 100%;
-    height: 820px;
-    border: none;
-    display: block;
-  }
+  .form-embed iframe { width: 100%; height: 820px; border: none; display: block; }
 
-  /* ── Footer ── */
-  .page-footer {
-    text-align: center;
-    padding: 2rem 1rem;
-    font-size: 12px;
-    color: #7a9ab0;
-  }
+  .page-footer { text-align: center; padding: 2rem 1rem; font-size: 12px; color: #7a9ab0; }
 
-  /* ── Loading skeleton ── */
   .skeleton {
     display: inline-block;
     width: 80px; height: 14px;
@@ -197,7 +202,7 @@
 
 <div class="container">
 
-  <!-- ── イベント1 ── -->
+  <!-- イベント1 -->
   <div class="event-card">
     <div class="card-header">
       <div class="card-icon">🌲</div>
@@ -212,31 +217,23 @@
         </div>
       </div>
     </div>
-
+    <div class="details-section" id="details-asahikogen"></div>
     <div class="spots-section">
       <div class="spots-bar-wrap">
         <div class="spots-label">残り枠</div>
-        <div class="spots-bar">
-          <div class="spots-fill fill-open" id="bar-asahikogen" style="width:100%"></div>
-        </div>
+        <div class="spots-bar"><div class="spots-fill fill-open" id="bar-asahikogen" style="width:100%"></div></div>
       </div>
-      <div class="spots-badge badge-loading" id="badge-asahikogen">
-        <span class="skeleton"></span>
-      </div>
+      <div class="spots-badge badge-loading" id="badge-asahikogen"><span class="skeleton"></span></div>
     </div>
-
     <div class="form-section">
-      <button class="form-toggle-btn" id="btn-asahikogen" onclick="toggleForm('asahikogen')">
-        📝 申し込む
-      </button>
+      <button class="form-toggle-btn" id="btn-asahikogen" onclick="toggleForm('asahikogen')">📝 申し込む</button>
       <div class="form-embed" id="form-asahikogen">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScEsWhjbr23nNFcuayb5XI5JavP3RV0rT02HjGsY4ILhJxzBQ/viewform?embedded=true"
-          title="旭高原自然の家 申込フォーム" loading="lazy"></iframe>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScEsWhjbr23nNFcuayb5XI5JavP3RV0rT02HjGsY4ILhJxzBQ/viewform?embedded=true" title="旭高原自然の家 申込フォーム" loading="lazy"></iframe>
       </div>
     </div>
   </div>
 
-  <!-- ── イベント2 ── -->
+  <!-- イベント2 -->
   <div class="event-card">
     <div class="card-header">
       <div class="card-icon">💧</div>
@@ -250,31 +247,23 @@
         </div>
       </div>
     </div>
-
+    <div class="details-section" id="details-greenvalley"></div>
     <div class="spots-section">
       <div class="spots-bar-wrap">
         <div class="spots-label">残り枠</div>
-        <div class="spots-bar">
-          <div class="spots-fill fill-open" id="bar-greenvalley" style="width:100%"></div>
-        </div>
+        <div class="spots-bar"><div class="spots-fill fill-open" id="bar-greenvalley" style="width:100%"></div></div>
       </div>
-      <div class="spots-badge badge-loading" id="badge-greenvalley">
-        <span class="skeleton"></span>
-      </div>
+      <div class="spots-badge badge-loading" id="badge-greenvalley"><span class="skeleton"></span></div>
     </div>
-
     <div class="form-section">
-      <button class="form-toggle-btn" id="btn-greenvalley" onclick="toggleForm('greenvalley')">
-        📝 申し込む
-      </button>
+      <button class="form-toggle-btn" id="btn-greenvalley" onclick="toggleForm('greenvalley')">📝 申し込む</button>
       <div class="form-embed" id="form-greenvalley">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeXbbkuIgwYf0DQrf1zstviDtCbVuozZpGI5NlCwHtptxe6OA/viewform?embedded=true"
-          title="南知多グリーンバレー 申込フォーム" loading="lazy"></iframe>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeXbbkuIgwYf0DQrf1zstviDtCbVuozZpGI5NlCwHtptxe6OA/viewform?embedded=true" title="南知多グリーンバレー 申込フォーム" loading="lazy"></iframe>
       </div>
     </div>
   </div>
 
-  <!-- ── イベント3 ── -->
+  <!-- イベント3 -->
   <div class="event-card">
     <div class="card-header">
       <div class="card-icon">⛰️</div>
@@ -289,26 +278,18 @@
         </div>
       </div>
     </div>
-
+    <div class="details-section" id="details-omachi"></div>
     <div class="spots-section">
       <div class="spots-bar-wrap">
         <div class="spots-label">残り枠</div>
-        <div class="spots-bar">
-          <div class="spots-fill fill-open" id="bar-omachi" style="width:100%"></div>
-        </div>
+        <div class="spots-bar"><div class="spots-fill fill-open" id="bar-omachi" style="width:100%"></div></div>
       </div>
-      <div class="spots-badge badge-loading" id="badge-omachi">
-        <span class="skeleton"></span>
-      </div>
+      <div class="spots-badge badge-loading" id="badge-omachi"><span class="skeleton"></span></div>
     </div>
-
     <div class="form-section">
-      <button class="form-toggle-btn" id="btn-omachi" onclick="toggleForm('omachi')">
-        📝 申し込む
-      </button>
+      <button class="form-toggle-btn" id="btn-omachi" onclick="toggleForm('omachi')">📝 申し込む</button>
       <div class="form-embed" id="form-omachi">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSemB5Gw68Ej82FfOZ6vBHrg1J_vjYLmRvXzsiRCW5iFBuI5FQ/viewform?embedded=true"
-          title="長野県大町ツアー 申込フォーム" loading="lazy"></iframe>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSemB5Gw68Ej82FfOZ6vBHrg1J_vjYLmRvXzsiRCW5iFBuI5FQ/viewform?embedded=true" title="長野県大町ツアー 申込フォーム" loading="lazy"></iframe>
       </div>
     </div>
   </div>
@@ -318,10 +299,19 @@
 <div class="page-footer">© 2025 JUMP UP</div>
 
 <script>
-  // ── GASエンドポイントURL（デプロイ後に差し替え） ──
-  const GAS_URL = 'https://script.google.com/macros/s/AKfycbyoK4AaPRSv41OtIrp1LkudISu_XCkqF4Fz3WEsBzpOs7XyKrwLAG3lwKIZNQ9VdjiZyg/exec';
+  const GAS_URL = 'https://script.google.com/macros/s/AKfycbyoK4aaPRSv41OtIrp1LkudISu_XCkqF4Fz3WEsBzpOs7XyKrwLAG3lwKIZNQ9VdjiZyg/exec';
 
-  // ── フォーム開閉 ──
+  const DETAIL_KEYS = [
+    { key: '料金',     label: '💴 料金' },
+    { key: '集合場所', label: '📍 集合場所' },
+    { key: '集合時間', label: '🕗 集合時間' },
+    { key: '解散時間', label: '🕔 解散時間' },
+    { key: '持ち物',   label: '🎒 持ち物' },
+    { key: 'お弁当',   label: '🍱 お弁当' },
+    { key: '服装',     label: '👕 服装' },
+    { key: '備考',     label: '📝 備考' },
+  ];
+
   function toggleForm(id) {
     const formEl = document.getElementById('form-' + id);
     const btnEl  = document.getElementById('btn-' + id);
@@ -331,15 +321,16 @@
     btnEl.textContent = isOpen ? '📝 申し込む' : '✖ 閉じる';
   }
 
-  // ── 残り枠取得 ──
-  async function fetchSpots() {
+  async function fetchData() {
     try {
       const res = await fetch(GAS_URL);
       const data = await res.json();
-      data.events.forEach(ev => updateSpots(ev));
+      data.events.forEach(ev => {
+        updateSpots(ev);
+        updateDetails(ev);
+      });
     } catch (e) {
-      // GAS未設定時はスケルトンのまま
-      console.warn('残り枠の取得に失敗しました', e);
+      console.warn('データの取得に失敗しました', e);
       ['asahikogen','greenvalley','omachi'].forEach(id => {
         const badge = document.getElementById('badge-' + id);
         if (badge) { badge.textContent = '取得中...'; badge.className = 'spots-badge badge-loading'; }
@@ -355,38 +346,41 @@
 
     const pct = Math.round((ev.applicants / ev.capacity) * 100);
     bar.style.width = pct + '%';
-
     const half = ev.capacity / 2;
 
     if (ev.remaining === 0) {
-      // 満員
       bar.className = 'spots-fill fill-full';
       badge.textContent = '満員';
       badge.className = 'spots-badge badge-full';
       btn.textContent = '受付終了';
       btn.classList.add('full-btn');
     } else if (ev.remaining < 10) {
-      // 10名未満 → 具体的な残り人数を表示
       bar.className = 'spots-fill fill-almost';
       badge.textContent = 'あと ' + ev.remaining + ' 名';
       badge.className = 'spots-badge badge-almost';
     } else if (ev.remaining < half) {
-      // 半分未満〜10名以上 → 「残りわずか」
       bar.className = 'spots-fill fill-almost';
       badge.textContent = '残りわずか';
       badge.className = 'spots-badge badge-almost';
     } else {
-      // 半分以上 → 「余裕あり」
       bar.className = 'spots-fill fill-open';
       badge.textContent = '余裕あり';
       badge.className = 'spots-badge badge-open';
     }
   }
 
-  // ── 初回取得 ──
-  fetchSpots();
-  // 5分ごとに自動更新
-  setInterval(fetchSpots, 5 * 60 * 1000);
+  function updateDetails(ev) {
+    const section = document.getElementById('details-' + ev.id);
+    if (!section) return;
+    const rows = DETAIL_KEYS
+      .filter(d => ev[d.key] && ev[d.key].toString().trim() !== '')
+      .map(d => `<tr><td>${d.label}</td><td>${ev[d.key]}</td></tr>`)
+      .join('');
+    section.innerHTML = rows ? `<table class="details-table">${rows}</table>` : '';
+  }
+
+  fetchData();
+  setInterval(fetchData, 5 * 60 * 1000);
 </script>
 </body>
 </html>
