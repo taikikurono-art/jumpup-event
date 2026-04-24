@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>夏のイベント2025 | JUMP UP</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', 'Hiragino Maru Gothic ProN', sans-serif;
+    background: #f0f7ff;
+    color: #1a2a3a;
+    min-height: 100vh;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    background: linear-gradient(135deg, #1a8fd1 0%, #0a5a8c 100%);
+    padding: 3rem 1.5rem 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50px; right: -50px;
+    width: 220px; height: 220px;
+    background: rgba(255,215,64,0.15);
+    border-radius: 50%;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -30px;
+    width: 180px; height: 180px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .hero-emoji { font-size: 52px; display: block; margin-bottom: 0.5rem; }
+  .hero-label { font-size: 12px; color: rgba(255,255,255,0.75); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.5rem; }
+  .hero-title { font-size: 28px; font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 0.5rem; }
+  .hero-title span { color: #ffd740; }
+  .hero-sub { font-size: 13px; color: rgba(255,255,255,0.75); }
+
+  /* ── Container ── */
+  .container { max-width: 720px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+
+  /* ── Event Card ── */
+  .event-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+  }
+
+  .card-header {
+    padding: 1.5rem 1.5rem 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    border-bottom: 1px solid #f0f4f8;
+  }
+  .card-icon { font-size: 40px; flex-shrink: 0; line-height: 1; }
+  .card-meta { flex: 1; }
+
+  .event-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 0.4rem;
+  }
+  .tag-1 { background: #E1F5EE; color: #0F6E56; }
+  .tag-2 { background: #E6F1FB; color: #185FA5; }
+  .tag-3 { background: #FAEEDA; color: #854F0B; }
+
+  .card-title { font-size: 18px; font-weight: 900; color: #1a2a3a; line-height: 1.3; }
+
+  .meta-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 0.75rem; }
+  .meta-pill {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 12px; color: #5a7a9a;
+    background: #f0f7ff;
+    padding: 4px 10px; border-radius: 20px;
+  }
+
+  /* ── Remaining Spots ── */
+  .spots-section {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #f0f4f8;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .spots-bar-wrap { flex: 1; }
+  .spots-label { font-size: 12px; color: #7a9ab0; margin-bottom: 4px; }
+  .spots-bar {
+    height: 8px;
+    background: #e8f0f8;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .spots-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.6s ease;
+  }
+  .fill-open { background: #1dba8a; }
+  .fill-almost { background: #f5a623; }
+  .fill-full { background: #e24b4a; }
+
+  .spots-badge {
+    flex-shrink: 0;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .badge-open { background: #E1F5EE; color: #0F6E56; }
+  .badge-almost { background: #FAEEDA; color: #854F0B; }
+  .badge-full { background: #FCEBEB; color: #A32D2D; }
+  .badge-loading { background: #f0f4f8; color: #7a9ab0; }
+
+  /* ── Form Section ── */
+  .form-section { padding: 1.25rem 1.5rem 1.5rem; }
+  .form-toggle-btn {
+    width: 100%;
+    padding: 12px;
+    background: #1a8fd1;
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  .form-toggle-btn:hover { background: #1278b8; }
+  .form-toggle-btn.full-btn { background: #ccc; cursor: not-allowed; }
+
+  .form-embed {
+    display: none;
+    margin-top: 1rem;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e0eaf4;
+  }
+  .form-embed.open { display: block; }
+  .form-embed iframe {
+    width: 100%;
+    height: 820px;
+    border: none;
+    display: block;
+  }
+
+  /* ── Footer ── */
+  .page-footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 12px;
+    color: #7a9ab0;
+  }
+
+  /* ── Loading skeleton ── */
+  .skeleton {
+    display: inline-block;
+    width: 80px; height: 14px;
+    background: linear-gradient(90deg, #e8f0f8 25%, #d0e4f4 50%, #e8f0f8 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.2s infinite;
+    border-radius: 4px;
+    vertical-align: middle;
+  }
+  @keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <span class="hero-emoji">☀️</span>
+  <div class="hero-label">JUMP UP 2025 夏のイベント</div>
+  <div class="hero-title">この夏、子どもたちに<span>本物の体験</span>を。</div>
+  <div class="hero-sub">全3イベント開催 ／ 幼児〜小学生対象</div>
+</div>
+
+<div class="container">
+
+  <!-- ── イベント1 ── -->
+  <div class="event-card">
+    <div class="card-header">
+      <div class="card-icon">🌲</div>
+      <div class="card-meta">
+        <div class="event-tag tag-1">サマーイベント第一弾</div>
+        <div class="card-title">お楽しみサマー<br>旭高原自然の家</div>
+        <div class="meta-pills">
+          <span class="meta-pill">📅 7月19日（土）・20日（日）</span>
+          <span class="meta-pill">👦 幼児・1年生・2年生</span>
+          <span class="meta-pill">📍 旭高原自然の家</span>
+          <span class="meta-pill">👥 定員20名</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="spots-section">
+      <div class="spots-bar-wrap">
+        <div class="spots-label">残り枠</div>
+        <div class="spots-bar">
+          <div class="spots-fill fill-open" id="bar-asahikogen" style="width:100%"></div>
+        </div>
+      </div>
+      <div class="spots-badge badge-loading" id="badge-asahikogen">
+        <span class="skeleton"></span>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <button class="form-toggle-btn" id="btn-asahikogen" onclick="toggleForm('asahikogen')">
+        📝 申し込む
+      </button>
+      <div class="form-embed" id="form-asahikogen">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScEsWhjbr23nNFcuayb5XI5JavP3RV0rT02HjGsY4ILhJxzBQ/viewform?embedded=true"
+          title="旭高原自然の家 申込フォーム" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── イベント2 ── -->
+  <div class="event-card">
+    <div class="card-header">
+      <div class="card-icon">💧</div>
+      <div class="card-meta">
+        <div class="event-tag tag-2">サマーイベント第二弾</div>
+        <div class="card-title">南知多グリーンバレーで<br>遊び尽くそう！</div>
+        <div class="meta-pills">
+          <span class="meta-pill">📅 8月1日（金）</span>
+          <span class="meta-pill">📍 南知多グリーンバレー</span>
+          <span class="meta-pill">👥 定員30名</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="spots-section">
+      <div class="spots-bar-wrap">
+        <div class="spots-label">残り枠</div>
+        <div class="spots-bar">
+          <div class="spots-fill fill-open" id="bar-greenvalley" style="width:100%"></div>
+        </div>
+      </div>
+      <div class="spots-badge badge-loading" id="badge-greenvalley">
+        <span class="skeleton"></span>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <button class="form-toggle-btn" id="btn-greenvalley" onclick="toggleForm('greenvalley')">
+        📝 申し込む
+      </button>
+      <div class="form-embed" id="form-greenvalley">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeXbbkuIgwYf0DQrf1zstviDtCbVuozZpGI5NlCwHtptxe6OA/viewform?embedded=true"
+          title="南知多グリーンバレー 申込フォーム" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── イベント3 ── -->
+  <div class="event-card">
+    <div class="card-header">
+      <div class="card-icon">⛰️</div>
+      <div class="card-meta">
+        <div class="event-tag tag-3">サマーイベント第三弾</div>
+        <div class="card-title">長野県大町で<br>大自然満喫ツアー</div>
+        <div class="meta-pills">
+          <span class="meta-pill">📅 8月28日（木）〜30日（土）</span>
+          <span class="meta-pill">👦 小学生対象</span>
+          <span class="meta-pill">📍 長野県大町市</span>
+          <span class="meta-pill">👥 定員40名</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="spots-section">
+      <div class="spots-bar-wrap">
+        <div class="spots-label">残り枠</div>
+        <div class="spots-bar">
+          <div class="spots-fill fill-open" id="bar-omachi" style="width:100%"></div>
+        </div>
+      </div>
+      <div class="spots-badge badge-loading" id="badge-omachi">
+        <span class="skeleton"></span>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <button class="form-toggle-btn" id="btn-omachi" onclick="toggleForm('omachi')">
+        📝 申し込む
+      </button>
+      <div class="form-embed" id="form-omachi">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSemB5Gw68Ej82FfOZ6vBHrg1J_vjYLmRvXzsiRCW5iFBuI5FQ/viewform?embedded=true"
+          title="長野県大町ツアー 申込フォーム" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="page-footer">© 2025 JUMP UP</div>
+
+<script>
+  // ── GASエンドポイントURL（デプロイ後に差し替え） ──
+  const GAS_URL = 'https://script.google.com/macros/s/AKfycbyoK4AaPRSv41OtIrp1LkudISu_XCkqF4Fz3WEsBzpOs7XyKrwLAG3lwKIZNQ9VdjiZyg/exec';
+
+  // ── フォーム開閉 ──
+  function toggleForm(id) {
+    const formEl = document.getElementById('form-' + id);
+    const btnEl  = document.getElementById('btn-' + id);
+    if (btnEl.classList.contains('full-btn')) return;
+    const isOpen = formEl.classList.contains('open');
+    formEl.classList.toggle('open', !isOpen);
+    btnEl.textContent = isOpen ? '📝 申し込む' : '✖ 閉じる';
+  }
+
+  // ── 残り枠取得 ──
+  async function fetchSpots() {
+    try {
+      const res = await fetch(GAS_URL);
+      const data = await res.json();
+      data.events.forEach(ev => updateSpots(ev));
+    } catch (e) {
+      // GAS未設定時はスケルトンのまま
+      console.warn('残り枠の取得に失敗しました', e);
+      ['asahikogen','greenvalley','omachi'].forEach(id => {
+        const badge = document.getElementById('badge-' + id);
+        if (badge) { badge.textContent = '取得中...'; badge.className = 'spots-badge badge-loading'; }
+      });
+    }
+  }
+
+  function updateSpots(ev) {
+    const bar   = document.getElementById('bar-'   + ev.id);
+    const badge = document.getElementById('badge-' + ev.id);
+    const btn   = document.getElementById('btn-'   + ev.id);
+    if (!bar || !badge) return;
+
+    const pct = Math.round((ev.applicants / ev.capacity) * 100);
+    bar.style.width = pct + '%';
+
+    const half = ev.capacity / 2;
+
+    if (ev.remaining === 0) {
+      // 満員
+      bar.className = 'spots-fill fill-full';
+      badge.textContent = '満員';
+      badge.className = 'spots-badge badge-full';
+      btn.textContent = '受付終了';
+      btn.classList.add('full-btn');
+    } else if (ev.remaining < 10) {
+      // 10名未満 → 具体的な残り人数を表示
+      bar.className = 'spots-fill fill-almost';
+      badge.textContent = 'あと ' + ev.remaining + ' 名';
+      badge.className = 'spots-badge badge-almost';
+    } else if (ev.remaining < half) {
+      // 半分未満〜10名以上 → 「残りわずか」
+      bar.className = 'spots-fill fill-almost';
+      badge.textContent = '残りわずか';
+      badge.className = 'spots-badge badge-almost';
+    } else {
+      // 半分以上 → 「余裕あり」
+      bar.className = 'spots-fill fill-open';
+      badge.textContent = '余裕あり';
+      badge.className = 'spots-badge badge-open';
+    }
+  }
+
+  // ── 初回取得 ──
+  fetchSpots();
+  // 5分ごとに自動更新
+  setInterval(fetchSpots, 5 * 60 * 1000);
+</script>
+</body>
+</html>
