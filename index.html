@@ -324,14 +324,29 @@ body {
 .ev-stay-top {
   display: flex; gap: 1rem; align-items: center;
 }
-.stay-photos {
-  display: flex; gap: 8px; width: 100%; margin-top: .75rem;
+.stay-slider {
+  width: 100%; margin-top: .75rem; position: relative;
 }
-.stay-photo {
-  flex: 1; height: 100px;
-  object-fit: cover; border-radius: 10px;
-  border: 1px solid var(--border);
+.stay-slider-track {
+  display: flex; gap: 0;
+  overflow-x: scroll; scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 10px; scrollbar-width: none;
 }
+.stay-slider-track::-webkit-scrollbar { display: none; }
+.stay-slide {
+  flex: 0 0 100%; width: 100%; height: 180px;
+  object-fit: cover; scroll-snap-align: start;
+  border-radius: 10px;
+}
+.stay-dots {
+  display: flex; justify-content: center; gap: 6px; margin-top: 8px;
+}
+.stay-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--border); cursor: pointer; transition: background .2s;
+}
+.stay-dot.active { background: #1a6fc0; }
 .coming-soon-box {
   background: #f6fbff;
   border: 1.5px dashed #a0c8e8;
@@ -628,10 +643,17 @@ body {
             <div class="ev-stay-loc">📍 長野県大町市大字平4817</div>
           </div>
         </div>
-        <div class="stay-photos">
-          <img src="images/maruhan-1.jpg" alt="マルハンロッジ1" class="stay-photo">
-          <img src="images/maruhan-2.jpg" alt="マルハンロッジ2" class="stay-photo">
-          <img src="images/maruhan-3.jpg" alt="マルハンロッジ3" class="stay-photo">
+        <div class="stay-slider">
+          <div class="stay-slider-track" id="maruhan-track">
+            <img src="images/maruhan-1.jpg" alt="マルハンロッジ1" class="stay-slide">
+            <img src="images/maruhan-2.jpg" alt="マルハンロッジ2" class="stay-slide">
+            <img src="images/maruhan-3.jpg" alt="マルハンロッジ3" class="stay-slide">
+          </div>
+          <div class="stay-dots" id="maruhan-dots">
+            <span class="stay-dot active" onclick="goSlide(0)"></span>
+            <span class="stay-dot" onclick="goSlide(1)"></span>
+            <span class="stay-dot" onclick="goSlide(2)"></span>
+          </div>
         </div>
       </div>
 
@@ -791,6 +813,20 @@ body {
         }
       }
     } catch(e) {}
+  }
+
+  // マルハンスライダー
+  const track = document.getElementById('maruhan-track');
+  const dots  = document.querySelectorAll('.stay-dot');
+  if (track) {
+    track.addEventListener('scroll', () => {
+      const idx = Math.round(track.scrollLeft / track.offsetWidth);
+      dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+    });
+  }
+  function goSlide(idx) {
+    if (!track) return;
+    track.scrollTo({ left: track.offsetWidth * idx, behavior: 'smooth' });
   }
 
   restoreLastCard();
