@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>夏のイベント2026 | JUMP UP</title>
+<!-- OGP -->
+<meta name="description" content="JUMP UP 2026夏のイベント。郡上ワクワクサマー・長野県大町ツアーの2イベント開催。幼児〜小学生対象。オンライン申込受付中！">
+<meta property="og:title" content="夏のイベント2026 | JUMP UP">
+<meta property="og:description" content="あそびの先に、成長がある夏へ。郡上・大町の2イベント開催。幼児〜小学生対象。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://taikikurono-art.github.io/jumpup-event/">
+<meta property="og:image" content="https://taikikurono-art.github.io/jumpup-event/ogp.png">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Zen+Maru+Gothic:wght@400;700;900&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --green:   #2eaa6e;
+  --green-l: #e6f7ef;
+  --blue:    #1a8fd1;
+  --blue-l:  #e6f3fc;
+  --orange:  #f5a623;
+  --orange-l:#fff4e0;
+  --red:     #e24b4a;
+  --text:    #1a2a3a;
+  --sub:     #5a7a9a;
+  --border:  #e8f0f8;
+  --bg:      #f4f8fc;
+}
+
+body {
+  font-family: 'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(160deg, #1a8fd1 0%, #0a5080 60%, #063a60 100%);
+  padding: 3.5rem 1.5rem 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background-image: url('images/hero.jpg');
+  background-size: cover; background-position: center;
+  opacity: .25;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 80% 20%, rgba(255,215,64,.18) 0%, transparent 60%),
+              radial-gradient(ellipse at 10% 80%, rgba(46,170,110,.12) 0%, transparent 50%);
+  z-index: 1;
+}
+.hero-inner { position: relative; z-index: 2; }
+
+.hero-notice {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(255,215,64,.2); border: 1px solid rgba(255,215,64,.4);
+  color: #ffd740; font-size: 12px; font-weight: 700;
+  padding: 5px 14px; border-radius: 20px; margin-bottom: 1.25rem;
+}
+.hero-title {
+  font-size: 30px; font-weight: 900; color: #fff; line-height: 1.35; margin-bottom: .6rem;
+}
+.hero-title span { color: #ffd740; }
+.hero-copy { font-size: 14px; color: rgba(255,255,255,.85); font-weight: 700; margin-bottom: .5rem; }
+.hero-sub  { font-size: 12px; color: rgba(255,255,255,.6); margin-bottom: 1.75rem; }
+
+/* 目次ナビ */
+.hero-nav { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; }
+.hero-nav-btn {
+  display: flex; align-items: center; gap: 6px;
+  background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25);
+  color: #fff; font-family: inherit; font-size: 13px; font-weight: 700;
+  padding: 9px 18px; border-radius: 30px; cursor: pointer; text-decoration: none;
+  transition: background .2s;
+}
+.hero-nav-btn:hover { background: rgba(255,255,255,.22); }
+
+/* ── CONTAINER ── */
+.container { max-width: 760px; margin: 0 auto; padding: 2.5rem 1rem 4rem; }
+
+/* ── お知らせバナー ── */
+.notice-banner {
+  background: linear-gradient(135deg, #fff8e6, #fff3d0);
+  border: 1.5px solid #ffd740;
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2.5rem;
+  display: flex; gap: 1rem; align-items: flex-start;
+}
+.notice-icon { font-size: 28px; flex-shrink: 0; }
+.notice-body {}
+.notice-title { font-size: 14px; font-weight: 900; color: #7a5000; margin-bottom: .4rem; }
+.notice-text  { font-size: 13px; color: #5a4000; line-height: 1.75; }
+
+/* ── EVENT SECTION ── */
+.event-section { margin-bottom: 3.5rem; }
+
+/* イベントメイン写真 */
+.ev-main-photo {
+  width: 100%; height: 220px;
+  background: #c8dff0 url('images/placeholder.jpg') center/cover no-repeat;
+  position: relative; overflow: hidden;
+  border-radius: 20px 20px 0 0;
+}
+.ev-1 .ev-main-photo { background-color: #b8dfc8; }
+.ev-2 .ev-main-photo { background-color: #b8cfe8; }
+.ev-main-photo-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,.35) 100%);
+}
+.ev-main-photo img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.ev-photo-placeholder {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: .5rem;
+}
+.ev-photo-placeholder-icon { font-size: 40px; opacity: .4; }
+.ev-photo-placeholder-text { font-size: 12px; color: rgba(255,255,255,.6); font-weight: 700; }
+
+/* ヘッダーバー */
+.event-header {
+  border-radius: 0;
+  padding: 1.75rem 1.5rem 1.5rem;
+  position: relative; overflow: hidden;
+}
+.ev-1 .event-header { background: linear-gradient(135deg, #2eaa6e 0%, #1a8050 100%); }
+.ev-2 .event-header { background: linear-gradient(135deg, #1a6fc0 0%, #0a4a8c 100%); }
+.event-header::after {
+  content: '';
+  position: absolute; right: -30px; top: -30px;
+  width: 160px; height: 160px;
+  background: rgba(255,255,255,.08); border-radius: 50%;
+}
+.ev-num { font-size: 11px; font-weight: 700; color: rgba(255,255,255,.7); letter-spacing: .1em; margin-bottom: .5rem; }
+.ev-title { font-size: 22px; font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: .75rem; }
+.ev-title-en { font-size: 12px; color: rgba(255,255,255,.6); margin-bottom: 1rem; }
+.ev-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.ev-pill {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: rgba(255,255,255,.18); color: #fff;
+  font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px;
+}
+
+/* カード本体 */
+.event-body {
+  background: #fff;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 6px 24px rgba(0,0,0,.08);
+  overflow: hidden;
+}
+
+/* キャッチコピー */
+.ev-catch {
+  padding: 1.25rem 1.5rem;
+  font-size: 14px; font-weight: 700; color: var(--sub);
+  line-height: 1.75; border-bottom: 1px solid var(--border);
+}
+
+/* ハイライトボックス */
+.ev-highlights {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 0; border-bottom: 1px solid var(--border);
+}
+.ev-hl {
+  padding: 1rem .75rem; text-align: center;
+  border-right: 1px solid var(--border);
+  font-size: 12px; color: var(--sub); line-height: 1.5;
+}
+.ev-hl:last-child { border-right: none; }
+.ev-hl-icon { font-size: 22px; display: block; margin-bottom: 4px; }
+.ev-hl-val  { font-size: 13px; font-weight: 700; color: var(--text); }
+
+/* タイムライン */
+.ev-timeline { padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--border); }
+.ev-section-title {
+  font-size: 13px; font-weight: 900; color: var(--text);
+  margin-bottom: 1rem; display: flex; align-items: center; gap: .5rem;
+}
+.ev-section-title::before {
+  content: ''; display: block;
+  width: 4px; height: 16px; border-radius: 2px;
+  background: var(--accent, #2eaa6e);
+}
+.ev-1 .ev-section-title::before { background: #2eaa6e; }
+.ev-2 .ev-section-title::before { background: #1a6fc0; }
+
+.day-block { margin-bottom: 1rem; }
+.day-block:last-child { margin-bottom: 0; }
+.day-label {
+  font-size: 11px; font-weight: 700; color: #fff;
+  background: var(--text); padding: 3px 10px; border-radius: 20px;
+  display: inline-block; margin-bottom: .6rem;
+}
+.ev-1 .day-label { background: #2eaa6e; }
+.ev-2 .day-label { background: #1a6fc0; }
+.timeline-list { list-style: none; }
+.timeline-item {
+  display: flex; gap: .75rem; align-items: flex-start;
+  font-size: 13px; color: var(--sub); line-height: 1.6;
+  padding: .35rem 0; border-bottom: 1px dashed var(--border);
+}
+.timeline-item:last-child { border-bottom: none; }
+.timeline-dot {
+  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 6px;
+}
+.ev-1 .timeline-dot { background: #2eaa6e; }
+.ev-2 .timeline-dot { background: #1a6fc0; }
+.timeline-item span { color: var(--text); font-weight: 700; }
+
+/* 宿泊情報 */
+.ev-stay {
+  padding: 1rem 1.5rem; border-bottom: 1px solid var(--border);
+  background: #fafcff;
+  display: flex; gap: 1rem; align-items: center;
+}
+.ev-stay-icon { font-size: 28px; }
+.ev-stay-info {}
+.ev-stay-label { font-size: 11px; color: var(--sub); font-weight: 700; margin-bottom: 2px; }
+.ev-stay-name  { font-size: 14px; font-weight: 900; color: var(--text); }
+.ev-stay-loc   { font-size: 12px; color: var(--sub); margin-top: 2px; }
+
+/* 残り枠 */
+.ev-spots {
+  padding: 1rem 1.5rem; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 1rem;
+}
+.spots-bar-wrap { flex: 1; }
+.spots-label { font-size: 12px; color: var(--sub); margin-bottom: 4px; }
+.spots-bar   { height: 8px; background: #e8f0f8; border-radius: 4px; overflow: hidden; }
+.spots-fill  { height: 100%; border-radius: 4px; transition: width .6s ease; }
+.fill-open   { background: #2eaa6e; }
+.fill-almost { background: var(--orange); }
+.fill-full   { background: var(--red); }
+.spots-badge {
+  flex-shrink: 0; font-size: 13px; font-weight: 700;
+  padding: 6px 14px; border-radius: 20px; white-space: nowrap;
+}
+.badge-open    { background: var(--green-l); color: var(--green); }
+.badge-almost  { background: var(--orange-l); color: #a06000; }
+.badge-full    { background: #fdecea; color: var(--red); }
+.badge-loading { background: var(--border); color: var(--sub); }
+
+/* 申込セクション */
+.ev-apply { padding: 1.25rem 1.5rem 1.5rem; }
+.pre-note {
+  background: var(--blue-l); border: 1px solid #c0dff4;
+  border-radius: 10px; padding: .75rem 1rem;
+  font-size: 12px; color: #2a5a7a; line-height: 1.8;
+  margin-bottom: .75rem;
+}
+.pre-note strong { color: var(--blue); display: block; margin-bottom: .2rem; }
+
+.apply-btn {
+  width: 100%; padding: 15px;
+  font-family: inherit; font-size: 15px; font-weight: 900;
+  color: #fff; border: none; border-radius: 14px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  transition: opacity .2s; letter-spacing: .03em;
+}
+.ev-1 .apply-btn { background: linear-gradient(135deg, #2eaa6e, #1a8050); }
+.ev-2 .apply-btn { background: linear-gradient(135deg, #1a8fd1, #0a5a8c); }
+.apply-btn:hover { opacity: .88; }
+.apply-btn.full-btn { background: #ddd; color: #999; cursor: not-allowed; opacity: 1; }
+
+.waitlist-btn {
+  display: block; width: 100%; margin-top: .75rem; padding: 12px;
+  background: #fff; font-family: inherit; font-size: 14px; font-weight: 700;
+  color: var(--red); border: 2px solid var(--red); border-radius: 12px;
+  cursor: pointer; text-align: center; text-decoration: none; transition: background .2s;
+}
+.waitlist-btn:hover { background: #fff5f5; }
+.waitlist-note { font-size: 11px; color: #aaa; text-align: center; margin-top: .4rem; }
+
+.form-embed { display: none; margin-top: 1rem; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+.form-embed.open { display: block; }
+.form-embed iframe { width: 100%; height: 820px; border: none; display: block; }
+
+/* ── FAQ ── */
+.faq-section {
+  background: #fff; border-radius: 20px; padding: 1.5rem;
+  margin-bottom: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,.07);
+}
+.faq-title {
+  font-size: 16px; font-weight: 900; margin-bottom: 1.25rem;
+  display: flex; align-items: center; gap: .5rem;
+}
+.faq-item { border-bottom: 1px solid var(--border); padding: .9rem 0; }
+.faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+.faq-q { font-size: 13px; font-weight: 700; margin-bottom: .4rem; display: flex; gap: .5rem; }
+.faq-q::before { content: 'Q'; color: var(--blue); font-weight: 900; flex-shrink: 0; }
+.faq-a { font-size: 13px; color: var(--sub); line-height: 1.7; display: flex; gap: .5rem; }
+.faq-a::before { content: 'A'; color: var(--green); font-weight: 900; flex-shrink: 0; }
+
+/* ── LINE CTA ── */
+.line-cta {
+  background: linear-gradient(135deg, #06C755, #00a040);
+  border-radius: 20px; padding: 1.5rem; margin-bottom: 2rem; text-align: center;
+}
+.line-cta-title { font-size: 15px; font-weight: 900; color: #fff; margin-bottom: .4rem; }
+.line-cta-sub   { font-size: 12px; color: rgba(255,255,255,.85); margin-bottom: 1rem; line-height: 1.6; }
+.line-cta-btn   {
+  display: inline-block; background: #fff; color: #06C755;
+  font-family: inherit; font-size: 14px; font-weight: 900;
+  padding: 10px 28px; border-radius: 30px; text-decoration: none;
+}
+
+.page-footer { text-align: center; padding: 2rem 1rem; font-size: 12px; color: #aaa; }
+.ev-main-photo img { display: block; }
+.ev-main-photo:not(.no-photo) .ev-photo-placeholder { display: none; }
+.ev-main-photo.no-photo img { display: none; }
+
+.spot-cards { padding: 0 1.5rem 1.25rem; display: flex; flex-direction: column; gap: .6rem; }
+.spot-card {
+  display: flex; align-items: center; gap: .75rem;
+  background: #f6fbff; border: 1px solid #d0e8f8;
+  border-radius: 12px; padding: .75rem 1rem;
+  text-decoration: none; color: inherit; transition: background .2s;
+}
+.spot-card:hover { background: #eaf4fd; }
+.spot-card-icon { font-size: 24px; flex-shrink: 0; }
+.spot-card-body { flex: 1; }
+.spot-card-name { font-size: 13px; font-weight: 700; color: #1a2a3a; margin-bottom: 2px; }
+.spot-card-desc { font-size: 11px; color: #5a7a9a; line-height: 1.5; }
+.spot-card-arrow { color: #1a8fd1; font-weight: 700; flex-shrink: 0; }
+.spot-link {
+  color: inherit; font-weight: 700; text-decoration: underline;
+  text-decoration-color: rgba(46,170,110,.4); text-underline-offset: 2px;
+}
+.spot-link:hover { text-decoration-color: #2eaa6e; }
+.skeleton {
+  display: inline-block; width: 80px; height: 14px;
+  background: linear-gradient(90deg, #e8f0f8 25%, #d0e4f4 50%, #e8f0f8 75%);
+  background-size: 200% 100%; animation: shimmer 1.2s infinite;
+  border-radius: 4px; vertical-align: middle;
+}
+@keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-notice">🌻 2026 サマーイベント 開催予定のお知らせ</div>
+    <div class="hero-title">あそびの先に、<span>成長がある夏</span>へ。</div>
+    <div class="hero-copy">子どもには「楽しい」、保護者には「安心と成長」を。</div>
+    <div class="hero-sub">全2イベント開催 ／ 年中〜小学生対象 ／ 一般募集あり</div>
+    <div class="hero-nav">
+      <a class="hero-nav-btn" href="#ev-gujo">🌿 郡上ワクワクサマー</a>
+      <a class="hero-nav-btn" href="#ev-omachi">⛰️ 長野大町ツアー</a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ── お知らせバナー ── -->
+  <div class="notice-banner">
+    <div class="notice-icon">🌻</div>
+    <div class="notice-body">
+      <div class="notice-title">教室会員の皆さま・一般の方へ</div>
+      <div class="notice-text">
+        今年の夏も、子どもたちと一緒に思いきり自然を楽しむサマーイベントを開催予定です😊✨<br>
+        今年は教室会員の皆さまだけでなく、<strong>一般募集も行う予定</strong>です！<br>
+        毎年人気のイベントとなっておりますので、ぜひ先に日程だけ空けておいていただけたら嬉しいです🙌
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       イベント1：郡上ワクワクサマー
+  ══════════════════════════════════ -->
+  <div class="event-section ev-1" id="ev-gujo">
+    <div class="event-header">
+      <div class="ev-num">🌈 サマーイベント第一弾</div>
+      <div class="ev-title">郡上ワクワクサマー2026</div>
+      <div class="ev-pills">
+        <span class="ev-pill">📅 7月19日（日）・20日（月）</span>
+        <span class="ev-pill">👦 年中〜小学1年生</span>
+        <span class="ev-pill">📍 岐阜県郡上周辺</span>
+        <span class="ev-pill">👥 定員20名</span>
+        <span class="ev-pill">🚌 金山・大曽根・春日井</span>
+      </div>
+    </div>
+    <div class="ev-main-photo" id="photo-gujo">
+      <img src="images/gujo-main.jpg" alt="郡上ワクワクサマーの様子" onerror="this.parentElement.classList.add('no-photo')">
+      <div class="ev-main-photo-overlay"></div>
+      <div class="ev-photo-placeholder">
+        <div class="ev-photo-placeholder-icon">📸</div>
+        <div class="ev-photo-placeholder-text">images/gujo-main.jpg をアップロード</div>
+      </div>
+    </div>
+    <div class="event-body">
+
+      <div class="ev-catch">
+        郡上の人気スポットをめぐる1泊2日！自然散策・小川遊び・カレー作り・あゆ掴み取りまで盛りだくさん。<br>
+        はじめての「お泊まり体験」にもぴったりです。
+      </div>
+
+      <div class="ev-highlights">
+        <div class="ev-hl">
+          <span class="ev-hl-icon">🏕️</span>
+          <div class="ev-hl-label">スタイル</div>
+          <div class="ev-hl-val">1泊2日</div>
+        </div>
+        <div class="ev-hl">
+          <span class="ev-hl-icon">🌿</span>
+          <div class="ev-hl-label">エリア</div>
+          <div class="ev-hl-val">岐阜県郡上</div>
+        </div>
+        <div class="ev-hl">
+          <span class="ev-hl-icon">✅</span>
+          <div class="ev-hl-label">参加しやすさ</div>
+          <div class="ev-hl-val">初参加歓迎</div>
+        </div>
+      </div>
+
+      <!-- タイムライン -->
+      <div class="ev-timeline">
+        <div class="ev-section-title">🌿 主なプログラム予定</div>
+
+        <div class="day-block">
+          <div class="day-label">1日目</div>
+          <ul class="timeline-list">
+            <li class="timeline-item"><span class="timeline-dot"></span><div><span>自然散策</span>　<a href="https://www.alpen-group.net/outdoors/shirotori/activity/" target="_blank" class="spot-link">Alpen Outdoors しろとりフィールド</a>で郡上の豊かな自然をみんなで歩いて探検。川・森・大自然が広がるキャンプフィールドです。</div></li>
+            <li class="timeline-item"><span class="timeline-dot"></span><div><span>小川遊び</span>　冷たくて気持ちいい！川の生き物も探そう</div></li>
+            <li class="timeline-item"><span class="timeline-dot"></span><div><span>みんなでカレー作り🍛</span>　<a href="https://naocorp.jp/" target="_blank" class="spot-link">N.A.O.明野高原</a>の貸別荘内で、材料を切って、火をおこして、みんなで作るカレーは格別！</div></li>
+            <li class="timeline-item"><span class="timeline-dot"></span><div><span>夜のお楽しみプログラム✨</span>　<a href="https://naocorp.jp/" target="_blank" class="spot-link">N.A.O.明野高原</a>の貸別荘でみんなの時間を思いっきり楽しもう！夜だからこそできる特別な時間。</div></li>
+          </ul>
+        </div>
+
+        <div class="day-block">
+          <div class="day-label">2日目</div>
+          <ul class="timeline-list">
+            <li class="timeline-item"><span class="timeline-dot"></span><div><span>おにぎり作り🍙</span>　朝ごはんは自分たちで！</div></li>
+            <li class="timeline-item"><span class="timeline-dot"></span><div><span>じゃぶじゃぶ池で水遊び💦</span>　<a href="https://naocorp.jp/" target="_blank" class="spot-link">N.A.O.明野高原</a>内にある水遊び場。水深が浅く安心して遊べます。思いきりはしゃごう！</div></li>
+            <li class="timeline-item"><span class="timeline-dot"></span><div><span>あゆ掴み取り🐟（希望プログラム）</span>　<a href="https://ayupark.jp/" target="_blank" class="spot-link">清流長良川 あゆパーク</a>で本物のあゆを手でつかまえる貴重な体験！郡上が誇る清流・長良川の恵みを感じよう。</div></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 宿泊 -->
+      <div class="ev-stay">
+        <div class="ev-stay-icon">🏡</div>
+        <div class="ev-stay-info">
+          <div class="ev-stay-label">宿泊施設</div>
+          <div class="ev-stay-name"><a href="https://naocorp.jp/" target="_blank" class="spot-link">N.A.O.明野高原キャンプ場&貸別荘</a></div>
+          <div class="ev-stay-loc">📍 岐阜県郡上市高鷲町　明野高原</div>
+        </div>
+      </div>
+
+      <!-- 施設紹介 -->
+      <div class="ev-spots-intro">
+        <div class="ev-section-title" style="padding:1.25rem 1.5rem 0;">🗺️ 訪問スポット</div>
+        <div class="spot-cards">
+          <a href="https://www.alpen-group.net/outdoors/shirotori/activity/" target="_blank" class="spot-card">
+            <div class="spot-card-icon">🌲</div>
+            <div class="spot-card-body">
+              <div class="spot-card-name">Alpen Outdoors しろとりフィールド</div>
+              <div class="spot-card-desc">郡上の大自然を体いっぱいに楽しめるキャンプ場。自然散策・小川遊びのフィールド。</div>
+            </div>
+            <div class="spot-card-arrow">→</div>
+          </a>
+          <a href="https://naocorp.jp/" target="_blank" class="spot-card">
+            <div class="spot-card-icon">🏡</div>
+            <div class="spot-card-body">
+              <div class="spot-card-name">N.A.O.明野高原キャンプ場&貸別荘</div>
+              <div class="spot-card-desc">明野高原の貸別荘で宿泊。場内のじゃぶじゃぶ池は水深が浅く安心して水遊びできます。</div>
+            </div>
+            <div class="spot-card-arrow">→</div>
+          </a>
+          <a href="https://ayupark.jp/" target="_blank" class="spot-card">
+            <div class="spot-card-icon">🐟</div>
+            <div class="spot-card-body">
+              <div class="spot-card-name">清流長良川 あゆパーク</div>
+              <div class="spot-card-desc">長良川の清流でアユのつかみ取り体験。郡上が誇る川の文化を肌で感じる貴重な体験。</div>
+            </div>
+            <div class="spot-card-arrow">→</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- 残り枠 -->
+      <div class="ev-spots">
+        <div class="spots-bar-wrap">
+          <div class="spots-label">受付状況</div>
+          <div class="spots-bar"><div class="spots-fill fill-open" id="bar-gujo" style="width:0%"></div></div>
+        </div>
+        <div class="spots-badge badge-loading" id="badge-gujo"><span class="skeleton"></span></div>
+      </div>
+
+      <!-- 申込 -->
+      <div class="ev-apply">
+        <div class="pre-note">
+          <strong>📋 申込前にご確認ください</strong>
+          集合場所（金山・大曽根・春日井）の選択 ／ アレルギー・配慮事項 ／ 緊急連絡先（保護者以外）をご準備ください。
+        </div>
+        <button class="apply-btn" id="btn-gujo" onclick="toggleForm('gujo')">🌿 このイベントに参加する</button>
+        <a class="waitlist-btn" id="waitlist-gujo" href="#" target="_blank" style="display:none;">キャンセル待ちに登録する</a>
+        <div class="waitlist-note" id="waitlist-note-gujo" style="display:none;">キャンセルが出た場合、登録順にご案内します。まだ可能性は残っています！</div>
+        <div class="form-embed" id="form-gujo">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScEsWhjbr23nNFcuayb5XI5JavP3RV0rT02HjGsY4ILhJxzBQ/viewform?embedded=true" title="郡上ワクワクサマー 申込フォーム" loading="lazy"></iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       イベント2：長野大町ツアー
+  ══════════════════════════════════ -->
+  <div class="event-section ev-2" id="ev-omachi">
+    <div class="event-header">
+      <div class="ev-num">⛰️ サマーイベント第二弾</div>
+      <div class="ev-title">長野県大町で大自然満喫ツアー</div>
+      <div class="ev-pills">
+        <span class="ev-pill">📅 8月24日（月）〜26日（水）</span>
+        <span class="ev-pill">👦 小学生対象</span>
+        <span class="ev-pill">📍 長野県大町市周辺</span>
+        <span class="ev-pill">👥 定員40名</span>
+        <span class="ev-pill">🚌 金山・大曽根・春日井</span>
+      </div>
+    </div>
+    <div class="ev-main-photo" id="photo-omachi">
+      <img src="images/omachi-main.jpg" alt="大町ツアーの様子" onerror="this.parentElement.classList.add('no-photo')">
+      <div class="ev-main-photo-overlay"></div>
+      <div class="ev-photo-placeholder">
+        <div class="ev-photo-placeholder-icon">📸</div>
+        <div class="ev-photo-placeholder-text">images/omachi-main.jpg をアップロード</div>
+      </div>
+    </div>
+    <div class="event-body">
+
+      <div class="ev-catch">
+        2泊でしか味わえない、アルプスの景色・自然の大切さ・水の気持ちよさを全身で。<br>
+        水遊び・クイズ大会・宝探し・工場見学まで、小学生だからこそできる特別な夏がここにあります。
+      </div>
+
+      <div class="ev-highlights">
+        <div class="ev-hl">
+          <span class="ev-hl-icon">🏕️</span>
+          <div class="ev-hl-label">スタイル</div>
+          <div class="ev-hl-val">2泊3日</div>
+        </div>
+        <div class="ev-hl">
+          <span class="ev-hl-icon">⛰️</span>
+          <div class="ev-hl-label">エリア</div>
+          <div class="ev-hl-val">長野県大町</div>
+        </div>
+        <div class="ev-hl">
+          <span class="ev-hl-icon">🔥</span>
+          <div class="ev-hl-label">難易度</div>
+          <div class="ev-hl-val">初心者〜中級</div>
+        </div>
+      </div>
+
+      <!-- タイムライン -->
+      <div class="ev-timeline">
+        <div class="ev-section-title">🌿 主なプログラム予定</div>
+
+        <div class="day-block">
+          <div class="day-label">1日目</div>
+          <ul class="timeline-list">
+            <li class="timeline-item"><span class="timeline-dot"></span><div><span>国営アルプスあづみの公園（堀金地区）で水遊び💦</span>　大きな水遊び場と広大な芝生エリアが気持ちいい！思いきり遊ぼう。</div></li>
+            <li class="timeline-item"><span class="timeline-dot"></span><div><span>グループタイム</span>　仲間と打ち解ける時間</div></li>
+            <li class="timeline-item"><span class="timeline-dot"></span><div><span>水にまつわるクイズ大会💧</span>　アルプスの水・自然のふしぎを楽しく学ぼう。チームで力を合わせて正解を目指せ！</div></li>
+          </ul>
+        </div>
+
+        <div class="day-block">
+          <div class="day-label">2日目</div>
+          <ul class="timeline-list">
+            <li class="timeline-item"><span class="timeline-dot"></span><div><span>国営アルプスあづみの公園（大町地区）スプラッシュリバーで水遊び🌊</span>　広大な公園でダイナミックな水遊び。昨日とは違う楽しさが待ってる！</div></li>
+            <li class="timeline-item"><span class="timeline-dot"></span><div><span>グループ対抗ポイントラリー🗺️</span>　広大な公園内でグループの力を合わせ、ポイントをまわってゴールを目指そう！</div></li>
+            <li class="timeline-item"><span class="timeline-dot"></span><div><span>夜のグループ出しもの大会✨</span>　グループごとに出し物を考えて発表！みんなで盛り上がろう。</div></li>
+          </ul>
+        </div>
+
+        <div class="day-block">
+          <div class="day-label">3日目</div>
+          <ul class="timeline-list">
+            <li class="timeline-item"><span class="timeline-dot"></span><div><span>サントリー天然水工場 見学🏭</span>　大町が誇るアルプスの天然水。おいしい水ができるまでの工程を楽しく学べるツアーに参加。</div></li>
+            <li class="timeline-item"><span class="timeline-dot"></span><div><span>自然の中でグループお弁当🍱</span>　きれいな自然が広がる工場敷地内で、グループごとに好きな場所を見つけてお弁当タイム。</div></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 宿泊 -->
+      <div class="ev-stay">
+        <div class="ev-stay-icon">🏡</div>
+        <div class="ev-stay-info">
+          <div class="ev-stay-label">宿泊施設</div>
+          <div class="ev-stay-name">マルハンロッジ</div>
+          <div class="ev-stay-loc">📍 長野県大町市周辺</div>
+        </div>
+      </div>
+
+      <!-- 残り枠 -->
+      <div class="ev-spots">
+        <div class="spots-bar-wrap">
+          <div class="spots-label">受付状況</div>
+          <div class="spots-bar"><div class="spots-fill fill-open" id="bar-omachi" style="width:0%"></div></div>
+        </div>
+        <div class="spots-badge badge-loading" id="badge-omachi"><span class="skeleton"></span></div>
+      </div>
+
+      <!-- 申込 -->
+      <div class="ev-apply">
+        <div class="pre-note">
+          <strong>📋 申込前にご確認ください</strong>
+          集合場所（金山・大曽根・春日井）の選択 ／ アレルギー・配慮事項 ／ 緊急連絡先（保護者以外）をご準備ください。
+        </div>
+        <button class="apply-btn" id="btn-omachi" onclick="toggleForm('omachi')">⛰️ このイベントに参加する</button>
+        <a class="waitlist-btn" id="waitlist-omachi" href="#" target="_blank" style="display:none;">キャンセル待ちに登録する</a>
+        <div class="waitlist-note" id="waitlist-note-omachi" style="display:none;">キャンセルが出た場合、登録順にご案内します。まだ可能性は残っています！</div>
+        <div class="form-embed" id="form-omachi">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSemB5Gw68Ej82FfOZ6vBHrg1J_vjYLmRvXzsiRCW5iFBuI5FQ/viewform?embedded=true" title="長野県大町ツアー 申込フォーム" loading="lazy"></iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── FAQ ── -->
+  <div class="faq-section">
+    <div class="faq-title">❓ よくある質問</div>
+    <div class="faq-item">
+      <div class="faq-q">雨天時はどうなりますか？</div>
+      <div class="faq-a">基本的に雨天決行です。内容を一部変更して実施する場合があります。中止の場合は前日までにご連絡します。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">集合場所は申込後に変更できますか？</div>
+      <div class="faq-a">変更を希望される場合はLINEまたはメールにてご連絡ください。定員に余裕がある場合は対応いたします。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">きょうだいで一緒に申し込めますか？</div>
+      <div class="faq-a">はい、可能です。お子さんごとに別々のフォームからお申し込みください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">キャンセルはできますか？</div>
+      <div class="faq-a">キャンセルの場合はお早めにLINEまたはメールにてご連絡ください。キャンセルポリシーの詳細は申込確認メールにてお知らせします。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">持ち物の詳細はいつ分かりますか？</div>
+      <div class="faq-a">申込締切後、開催日の2週間前までに詳細をご連絡します。LINEでもお知らせしますのでご登録をおすすめします。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">初参加でも大丈夫ですか？</div>
+      <div class="faq-a">もちろんです！初参加のお子さんも毎回たくさん参加しています。スタッフがしっかりサポートしますのでご安心ください。</div>
+    </div>
+  </div>
+
+  <!-- ── LINE CTA ── -->
+  <div class="line-cta">
+    <div class="line-cta-title">📲 ご質問はLINEへ</div>
+    <div class="line-cta-sub">
+      申込前の不安・キャンセル待ち・最新情報はLINEで受け取れます。<br>
+      満員のイベントもキャンセル待ちをLINEで受付中！
+    </div>
+    <a class="line-cta-btn" href="https://lin.ee/XXXXXXXX" target="_blank">LINE で問い合わせる</a>
+  </div>
+
+</div>
+
+<div class="page-footer">© 2026 JUMP UP</div>
+
+<script>
+  const GAS_URL = 'https://script.google.com/macros/s/AKfycbyoK4aaPRSv41OtIrp1LkudISu_XCkqF4Fz3WEsBzpOs7XyKrwLAG3lwKIZNQ9VdjiZyg/exec';
+
+  const WAITLIST_URLS = {
+    gujo:   'ここにキャンセル待ちフォームURL（郡上）を貼る',
+    omachi: 'ここにキャンセル待ちフォームURL（大町）を貼る',
+  };
+
+  // GASのイベントIDマッピング（GAS側のidと対応）
+  const ID_MAP = {
+    asahikogen:  'gujo',   // 旭高原→郡上に変更
+    greenvalley: null,      // 廃止
+    omachi:      'omachi',
+  };
+
+  const ICONS = { gujo: '🌿', omachi: '⛰️' };
+
+  function toggleForm(id) {
+    const formEl = document.getElementById('form-'  + id);
+    const btnEl  = document.getElementById('btn-'   + id);
+    if (!formEl || btnEl.classList.contains('full-btn')) return;
+    const isOpen = formEl.classList.contains('open');
+    formEl.classList.toggle('open', !isOpen);
+    btnEl.textContent = isOpen
+      ? (ICONS[id] || '📝') + ' このイベントに参加する'
+      : '✖ 閉じる';
+    try { sessionStorage.setItem('lastCard', id); } catch(e) {}
+  }
+
+  async function fetchData() {
+    try {
+      const res  = await fetch(GAS_URL);
+      const data = await res.json();
+      data.events.forEach(ev => {
+        const localId = ID_MAP[ev.id];
+        if (!localId) return;
+        updateSpots(localId, ev);
+      });
+    } catch(e) {
+      ['gujo','omachi'].forEach(id => {
+        const badge = document.getElementById('badge-' + id);
+        if (badge) { badge.textContent = '確認中...'; badge.className = 'spots-badge badge-loading'; }
+      });
+    }
+  }
+
+  function updateSpots(localId, ev) {
+    const bar   = document.getElementById('bar-'           + localId);
+    const badge = document.getElementById('badge-'         + localId);
+    const btn   = document.getElementById('btn-'           + localId);
+    const wBtn  = document.getElementById('waitlist-'      + localId);
+    const wNote = document.getElementById('waitlist-note-' + localId);
+    if (!bar || !badge) return;
+
+    const pct  = Math.round((ev.applicants / ev.capacity) * 100);
+    bar.style.width = pct + '%';
+    const half = ev.capacity / 2;
+
+    if (ev.remaining === 0) {
+      bar.className     = 'spots-fill fill-full';
+      badge.textContent = 'キャンセル待ち受付中';
+      badge.className   = 'spots-badge badge-full';
+      btn.textContent   = '受付終了';
+      btn.classList.add('full-btn');
+      if (wBtn)  { wBtn.href = WAITLIST_URLS[localId]; wBtn.style.display = 'block'; }
+      if (wNote) wNote.style.display = 'block';
+    } else if (ev.remaining < 10) {
+      bar.className     = 'spots-fill fill-almost';
+      badge.textContent = 'あと ' + ev.remaining + ' 名です';
+      badge.className   = 'spots-badge badge-almost';
+    } else if (ev.remaining < half) {
+      bar.className     = 'spots-fill fill-almost';
+      badge.textContent = 'お早めに';
+      badge.className   = 'spots-badge badge-almost';
+    } else {
+      bar.className     = 'spots-fill fill-open';
+      badge.textContent = '受付中';
+      badge.className   = 'spots-badge badge-open';
+    }
+  }
+
+  // 再訪時カード復元
+  function restoreLastCard() {
+    try {
+      const last = sessionStorage.getItem('lastCard');
+      if (last) {
+        const btn = document.getElementById('btn-' + last);
+        if (btn && !btn.classList.contains('full-btn')) {
+          toggleForm(last);
+          setTimeout(() => {
+            btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 400);
+        }
+      }
+    } catch(e) {}
+  }
+
+  fetchData();
+  restoreLastCard();
+  setInterval(fetchData, 5 * 60 * 1000);
+</script>
+</body>
+</html>
