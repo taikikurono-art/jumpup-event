@@ -317,12 +317,19 @@ body {
   padding: 10px 28px; border-radius: 30px; text-decoration: none;
 }
 
+.ev-stay-col {
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+.ev-stay-top {
+  display: flex; gap: 1rem; align-items: center;
+}
 .stay-photos {
-  display: flex; gap: 6px; flex-shrink: 0;
+  display: flex; gap: 8px; width: 100%; margin-top: .75rem;
 }
 .stay-photo {
-  width: 64px; height: 64px;
-  object-fit: cover; border-radius: 8px;
+  flex: 1; height: 100px;
+  object-fit: cover; border-radius: 10px;
   border: 1px solid var(--border);
 }
 .coming-soon-box {
@@ -378,7 +385,7 @@ body {
     <div class="hero-sub">全2イベント開催 ／ 年中〜小学生対象 ／ 一般募集あり</div>
     <div class="hero-nav">
       <a class="hero-nav-btn" href="#ev-gujo">🌿 郡上ワクワクサマー</a>
-      <a class="hero-nav-btn" href="#ev-omachi">⛰️ 長野大町ツアー</a>
+      <a class="hero-nav-btn" href="#ev-omachi">⛰️ 長野スプラッシュツアー</a>
     </div>
   </div>
 </div>
@@ -404,7 +411,7 @@ body {
   <div class="event-section ev-1" id="ev-gujo">
     <div class="event-header">
       <div class="ev-num">🌈 サマーイベント第一弾</div>
-      <div class="ev-title">郡上ワクワクサマー2026</div>
+      <div class="ev-title">郡上ワクワクサマー</div>
       <div class="ev-pills">
         <span class="ev-pill">📅 7月19日（日）・20日（月）</span>
         <span class="ev-pill">👦 年中〜小学1年生</span>
@@ -533,12 +540,12 @@ body {
   </div>
 
   <!-- ══════════════════════════════════
-       イベント2：長野大町ツアー
+       イベント2：長野スプラッシュツアー
   ══════════════════════════════════ -->
   <div class="event-section ev-2" id="ev-omachi">
     <div class="event-header">
       <div class="ev-num">⛰️ サマーイベント第二弾</div>
-      <div class="ev-title">長野県大町で大自然満喫ツアー</div>
+      <div class="ev-title">長野スプラッシュツアー</div>
       <div class="ev-pills">
         <span class="ev-pill">📅 8月24日（月）〜26日（水）</span>
         <span class="ev-pill">👦 小学生対象</span>
@@ -612,12 +619,14 @@ body {
       </div>
 
       <!-- 宿泊 -->
-      <div class="ev-stay">
-        <div class="ev-stay-icon">🏡</div>
-        <div class="ev-stay-info">
-          <div class="ev-stay-label">宿泊施設</div>
-          <div class="ev-stay-name">マルハンロッジ</div>
-          <div class="ev-stay-loc">📍 長野県大町市周辺</div>
+      <div class="ev-stay ev-stay-col">
+        <div class="ev-stay-top">
+          <div class="ev-stay-icon">🏡</div>
+          <div class="ev-stay-info">
+            <div class="ev-stay-label">宿泊施設</div>
+            <div class="ev-stay-name">マルハンロッジ</div>
+            <div class="ev-stay-loc">📍 長野県大町市大字平4817</div>
+          </div>
         </div>
         <div class="stay-photos">
           <img src="images/maruhan-1.jpg" alt="マルハンロッジ1" class="stay-photo">
