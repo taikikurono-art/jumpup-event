@@ -40,7 +40,7 @@ body {
 
 /* ── HERO ── */
 .hero {
-  background: linear-gradient(160deg, #1a8fd1 0%, #0a5080 60%, #063a60 100%);
+  background: #063a60;
   padding: 3.5rem 1.5rem 3rem;
   text-align: center;
   position: relative;
@@ -50,7 +50,7 @@ body {
   position: absolute; inset: 0;
   background-image: url('images/hero.jpg');
   background-size: cover; background-position: center;
-  opacity: .25;
+  opacity: .5;
 }
 .hero::before {
   content: '';
@@ -317,6 +317,16 @@ body {
   padding: 10px 28px; border-radius: 30px; text-decoration: none;
 }
 
+.coming-soon-box {
+  background: #f6fbff;
+  border: 1.5px dashed #a0c8e8;
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-align: center;
+}
+.coming-soon-icon { font-size: 28px; margin-bottom: .4rem; }
+.coming-soon-text { font-size: 14px; font-weight: 900; color: #1a2a3a; margin-bottom: .3rem; }
+.coming-soon-sub  { font-size: 12px; color: #7a9ab0; line-height: 1.6; }
 .page-footer { text-align: center; padding: 2rem 1rem; font-size: 12px; color: #aaa; }
 .ev-main-photo img { display: block; }
 .ev-main-photo:not(.no-photo) .ev-photo-placeholder { display: none; }
@@ -355,8 +365,8 @@ body {
 <div class="hero">
   <div class="hero-inner">
     <div class="hero-notice">🌻 2026 サマーイベント 開催予定のお知らせ</div>
-    <div class="hero-title">あそびの先に、<span>成長がある夏</span>へ。</div>
-    <div class="hero-copy">子どもには「楽しい」、保護者には「安心と成長」を。</div>
+    <div class="hero-title" style="font-size:20px;">夏を、思いっきり遊びつくそう！</div>
+    <div class="hero-copy" style="font-size:13px;">ドキドキワクワクの宿泊イベント、JUMP UPにおまかせ！</div>
     <div class="hero-sub">全2イベント開催 ／ 年中〜小学生対象 ／ 一般募集あり</div>
     <div class="hero-nav">
       <a class="hero-nav-btn" href="#ev-gujo">🌿 郡上ワクワクサマー</a>
@@ -494,7 +504,7 @@ body {
       </div>
 
       <!-- 残り枠 -->
-      <div class="ev-spots">
+      <div class="ev-spots" style="display:none;">
         <div class="spots-bar-wrap">
           <div class="spots-label">受付状況</div>
           <div class="spots-bar"><div class="spots-fill fill-open" id="bar-gujo" style="width:0%"></div></div>
@@ -504,15 +514,10 @@ body {
 
       <!-- 申込 -->
       <div class="ev-apply">
-        <div class="pre-note">
-          <strong>📋 申込前にご確認ください</strong>
-          集合場所（金山・大曽根・春日井）の選択 ／ アレルギー・配慮事項 ／ 緊急連絡先（保護者以外）をご準備ください。
-        </div>
-        <button class="apply-btn" id="btn-gujo" onclick="toggleForm('gujo')">🌿 このイベントに参加する</button>
-        <a class="waitlist-btn" id="waitlist-gujo" href="#" target="_blank" style="display:none;">キャンセル待ちに登録する</a>
-        <div class="waitlist-note" id="waitlist-note-gujo" style="display:none;">キャンセルが出た場合、登録順にご案内します。まだ可能性は残っています！</div>
-        <div class="form-embed" id="form-gujo">
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScEsWhjbr23nNFcuayb5XI5JavP3RV0rT02HjGsY4ILhJxzBQ/viewform?embedded=true" title="郡上ワクワクサマー 申込フォーム" loading="lazy"></iframe>
+        <div class="coming-soon-box">
+          <div class="coming-soon-icon">📋</div>
+          <div class="coming-soon-text">申し込み受付は準備中です</div>
+          <div class="coming-soon-sub">詳細が決まり次第、LINEでお知らせします。</div>
         </div>
       </div>
 
@@ -609,7 +614,7 @@ body {
       </div>
 
       <!-- 残り枠 -->
-      <div class="ev-spots">
+      <div class="ev-spots" style="display:none;">
         <div class="spots-bar-wrap">
           <div class="spots-label">受付状況</div>
           <div class="spots-bar"><div class="spots-fill fill-open" id="bar-omachi" style="width:0%"></div></div>
@@ -619,15 +624,10 @@ body {
 
       <!-- 申込 -->
       <div class="ev-apply">
-        <div class="pre-note">
-          <strong>📋 申込前にご確認ください</strong>
-          集合場所（金山・大曽根・春日井）の選択 ／ アレルギー・配慮事項 ／ 緊急連絡先（保護者以外）をご準備ください。
-        </div>
-        <button class="apply-btn" id="btn-omachi" onclick="toggleForm('omachi')">⛰️ このイベントに参加する</button>
-        <a class="waitlist-btn" id="waitlist-omachi" href="#" target="_blank" style="display:none;">キャンセル待ちに登録する</a>
-        <div class="waitlist-note" id="waitlist-note-omachi" style="display:none;">キャンセルが出た場合、登録順にご案内します。まだ可能性は残っています！</div>
-        <div class="form-embed" id="form-omachi">
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSemB5Gw68Ej82FfOZ6vBHrg1J_vjYLmRvXzsiRCW5iFBuI5FQ/viewform?embedded=true" title="長野県大町ツアー 申込フォーム" loading="lazy"></iframe>
+        <div class="coming-soon-box">
+          <div class="coming-soon-icon">📋</div>
+          <div class="coming-soon-text">申し込み受付は準備中です</div>
+          <div class="coming-soon-sub">詳細が決まり次第、LINEでお知らせします。</div>
         </div>
       </div>
 
@@ -649,17 +649,14 @@ body {
       <div class="faq-q">きょうだいで一緒に申し込めますか？</div>
       <div class="faq-a">はい、可能です。お子さんごとに別々のフォームからお申し込みください。</div>
     </div>
-    <div class="faq-item">
-      <div class="faq-q">キャンセルはできますか？</div>
-      <div class="faq-a">キャンセルの場合はお早めにLINEまたはメールにてご連絡ください。キャンセルポリシーの詳細は申込確認メールにてお知らせします。</div>
-    </div>
+
     <div class="faq-item">
       <div class="faq-q">持ち物の詳細はいつ分かりますか？</div>
       <div class="faq-a">申込締切後、開催日の2週間前までに詳細をご連絡します。LINEでもお知らせしますのでご登録をおすすめします。</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">初参加でも大丈夫ですか？</div>
-      <div class="faq-a">もちろんです！初参加のお子さんも毎回たくさん参加しています。スタッフがしっかりサポートしますのでご安心ください。</div>
+      <div class="faq-a">もちろんです！初参加のお子さんも毎回参加しています。スタッフがしっかりサポートしますのでご安心ください。</div>
     </div>
   </div>
 
@@ -774,9 +771,7 @@ body {
     } catch(e) {}
   }
 
-  fetchData();
   restoreLastCard();
-  setInterval(fetchData, 5 * 60 * 1000);
 </script>
 </body>
 </html>
