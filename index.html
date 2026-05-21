@@ -347,6 +347,58 @@ body {
   background: var(--border); cursor: pointer; transition: background .2s;
 }
 .stay-dot.active { background: #1a6fc0; }
+.price-box {
+  background: #f6fbff; border: 1.5px solid #c0dff4;
+  border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: .75rem;
+}
+.price-title { font-size: 13px; font-weight: 900; color: #1a2a3a; margin-bottom: .6rem; }
+.price-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: .4rem 0; border-bottom: 1px solid var(--border);
+}
+.price-row:last-child { border-bottom: none; }
+.price-label { font-size: 13px; color: var(--sub); font-weight: 700; }
+.price-val { font-size: 18px; font-weight: 900; color: #1a8fd1; }
+
+.agency-box {
+  background: #fafafa; border: 1px solid var(--border);
+  border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: .75rem;
+}
+.agency-title { font-size: 12px; font-weight: 900; color: var(--sub); margin-bottom: .5rem; }
+.agency-name  { font-size: 14px; font-weight: 900; color: #1a2a3a; margin-bottom: .3rem; }
+.agency-info  { font-size: 11px; color: var(--sub); line-height: 1.8; }
+
+.flow-box {
+  background: #f6fbff; border: 1px solid #c0dff4;
+  border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: .75rem;
+}
+.flow-box-title { font-size: 13px; font-weight: 900; color: #1a2a3a; margin-bottom: .75rem; }
+.flow-mini-list { display: flex; flex-direction: column; gap: .4rem; margin-bottom: .75rem; }
+.flow-mini-item { display: flex; gap: .6rem; align-items: flex-start; font-size: 12px; color: var(--sub); line-height: 1.6; }
+.flow-mini-num {
+  width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0;
+  background: #1a8fd1; color: #fff;
+  font-size: 11px; font-weight: 900;
+  display: flex; align-items: center; justify-content: center;
+}
+.flow-bank { background: #fff; border-radius: 8px; padding: .75rem; border: 1px solid var(--border); }
+.flow-bank-title { font-size: 12px; font-weight: 900; color: #1a2a3a; margin-bottom: .4rem; }
+.flow-bank-info { font-size: 11px; color: var(--sub); line-height: 1.8; }
+.flow-bank-note { font-size: 11px; color: #e24b4a; font-weight: 700; margin-top: .3rem; }
+.flow-list { display: flex; flex-direction: column; }
+.flow-item {
+  display: flex; gap: 1rem; align-items: flex-start;
+  padding: .9rem 0; border-bottom: 1px solid var(--border);
+}
+.flow-num {
+  width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+  background: #1a8fd1; color: #fff;
+  font-size: 13px; font-weight: 900;
+  display: flex; align-items: center; justify-content: center;
+}
+.flow-body {}
+.flow-title { font-size: 13px; font-weight: 900; color: #1a2a3a; margin-bottom: 3px; }
+.flow-desc  { font-size: 12px; color: var(--sub); line-height: 1.7; }
 .coming-soon-box {
   background: #f6fbff;
   border: 1.5px dashed #a0c8e8;
@@ -544,11 +596,44 @@ body {
 
       <!-- 申込 -->
       <div class="ev-apply">
-        <div class="coming-soon-box">
-          <div class="coming-soon-icon">📋</div>
-          <div class="coming-soon-text">申し込み受付は準備中です</div>
-          <div class="coming-soon-sub">詳細が決まり次第、LINEでお知らせします。</div>
+        <div class="price-box">
+          <div class="price-title">💴 参加費</div>
+          <div class="price-row"><span class="price-label">会員</span><span class="price-val">32,800円</span></div>
+          <div class="price-row"><span class="price-label">一般</span><span class="price-val">37,800円</span></div>
         </div>
+        <div class="agency-box">
+          <div class="agency-title">🏢 旅行企画・実施・お支払先</div>
+          <div class="agency-name">（株）ツーリスト中部</div>
+          <div class="agency-info">愛知県知事登録旅行業第2−1133号</div>
+          <div class="agency-info">総合旅行業務取扱管理者　岩井 優作</div>
+          <div class="agency-info">〒452-0903 愛知県清須市助七1-176 片岡ビル1階</div>
+          <div class="agency-info">TEL：052-409-8070　FAX：052-409-9130</div>
+        </div>
+        <div class="agency-box" style="margin-top:.75rem;">
+          <div class="agency-title">🏦 お振込先</div>
+          <div class="agency-name" style="font-size:13px;">三菱UFJ銀行（0005）尾張新川支店（894）</div>
+          <div class="agency-info">普通預金　口座番号：4609904　口座名義：カ）ツーリストチューブ</div>
+          <div class="agency-info" style="margin-top:.4rem; color:#e24b4a; font-weight:700;">※必ず代表者様のお名前でお振込みください</div>
+          <div class="agency-info">※振込手数料はご負担ください</div>
+          <div class="agency-info">※振込受領書が領収書となります</div>
+        </div>
+        <div class="flow-box">
+          <div class="flow-box-title">📋 申込後の流れ</div>
+          <div class="flow-mini-list">
+            <div class="flow-mini-item"><span class="flow-mini-num">1</span><span>フォームを送信</span></div>
+            <div class="flow-mini-item"><span class="flow-mini-num">2</span><span>LINEにお子さんの名前を送る（以降LINEでやりとり）</span></div>
+            <div class="flow-mini-item"><span class="flow-mini-num">3</span><span>出発20日前までに参加費をお振込み</span></div>
+            <div class="flow-mini-item"><span class="flow-mini-num">4</span><span>出発2週間前までに詳細をLINEでお知らせ</span></div>
+            <div class="flow-mini-item"><span class="flow-mini-num">🎒</span><span>当日！いってらっしゃい</span></div>
+          </div>
+          <div class="flow-bank">
+            <div class="flow-bank-title">🏦 お振込先</div>
+            <div class="flow-bank-info">三菱UFJ銀行（0005）尾張新川支店（894）</div>
+            <div class="flow-bank-info">普通預金　口座番号：4609904　口座名義：カ）ツーリストチューブ</div>
+            <div class="flow-bank-note">※必ず代表者様のお名前でお振込みください</div>
+          </div>
+        </div>
+        <a class="apply-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSeq3qCPR6cXrJwO19SJCqxitF4SYDnjgebLMEIlpun5nwvq9A/viewform?usp=header" target="_blank">📝 申し込みフォームはこちら</a>
       </div>
 
     </div>
@@ -668,11 +753,44 @@ body {
 
       <!-- 申込 -->
       <div class="ev-apply">
-        <div class="coming-soon-box">
-          <div class="coming-soon-icon">📋</div>
-          <div class="coming-soon-text">申し込み受付は準備中です</div>
-          <div class="coming-soon-sub">詳細が決まり次第、LINEでお知らせします。</div>
+        <div class="price-box">
+          <div class="price-title">💴 参加費</div>
+          <div class="price-row"><span class="price-label">会員</span><span class="price-val">49,800円</span></div>
+          <div class="price-row"><span class="price-label">一般</span><span class="price-val">59,800円</span></div>
         </div>
+        <div class="agency-box">
+          <div class="agency-title">🏢 旅行企画・実施・お支払先</div>
+          <div class="agency-name">（株）ツーリスト中部</div>
+          <div class="agency-info">愛知県知事登録旅行業第2−1133号</div>
+          <div class="agency-info">総合旅行業務取扱管理者　岩井 優作</div>
+          <div class="agency-info">〒452-0903 愛知県清須市助七1-176 片岡ビル1階</div>
+          <div class="agency-info">TEL：052-409-8070　FAX：052-409-9130</div>
+        </div>
+        <div class="agency-box" style="margin-top:.75rem;">
+          <div class="agency-title">🏦 お振込先</div>
+          <div class="agency-name" style="font-size:13px;">三菱UFJ銀行（0005）尾張新川支店（894）</div>
+          <div class="agency-info">普通預金　口座番号：4609904　口座名義：カ）ツーリストチューブ</div>
+          <div class="agency-info" style="margin-top:.4rem; color:#e24b4a; font-weight:700;">※必ず代表者様のお名前でお振込みください</div>
+          <div class="agency-info">※振込手数料はご負担ください</div>
+          <div class="agency-info">※振込受領書が領収書となります</div>
+        </div>
+        <div class="flow-box">
+          <div class="flow-box-title">📋 申込後の流れ</div>
+          <div class="flow-mini-list">
+            <div class="flow-mini-item"><span class="flow-mini-num">1</span><span>フォームを送信</span></div>
+            <div class="flow-mini-item"><span class="flow-mini-num">2</span><span>LINEにお子さんの名前を送る（以降LINEでやりとり）</span></div>
+            <div class="flow-mini-item"><span class="flow-mini-num">3</span><span>出発20日前までに参加費をお振込み</span></div>
+            <div class="flow-mini-item"><span class="flow-mini-num">4</span><span>出発2週間前までに詳細をLINEでお知らせ</span></div>
+            <div class="flow-mini-item"><span class="flow-mini-num">🎒</span><span>当日！いってらっしゃい</span></div>
+          </div>
+          <div class="flow-bank">
+            <div class="flow-bank-title">🏦 お振込先</div>
+            <div class="flow-bank-info">三菱UFJ銀行（0005）尾張新川支店（894）</div>
+            <div class="flow-bank-info">普通預金　口座番号：4609904　口座名義：カ）ツーリストチューブ</div>
+            <div class="flow-bank-note">※必ず代表者様のお名前でお振込みください</div>
+          </div>
+        </div>
+        <a class="apply-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSeq3qCPR6cXrJwO19SJCqxitF4SYDnjgebLMEIlpun5nwvq9A/viewform?usp=header" target="_blank">📝 申し込みフォームはこちら</a>
       </div>
 
     </div>
@@ -701,6 +819,28 @@ body {
     <div class="faq-item">
       <div class="faq-q">初参加でも大丈夫ですか？</div>
       <div class="faq-a">もちろんです！初参加のお子さんも毎回参加しています。スタッフがしっかりサポートしますのでご安心ください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">振込先を教えてください。</div>
+      <div class="faq-a">
+        三菱UFJ銀行（0005）尾張新川支店（894）<br>
+        普通預金　口座番号：4609904　口座名義：カ）ツーリストチューブ<br>
+        ※必ず代表者様のお名前でお振込みください。<br>
+        ※振込手数料はご負担ください。<br>
+        ※振込受領書が領収書となります。
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">キャンセル規定を教えてください。</div>
+      <div class="faq-a">
+        旅行開始日の前日から起算してさかのぼって以下の取消料が発生します。<br>
+        ・20日前〜8日前：20%<br>
+        ・7日前〜2日前：30%<br>
+        ・前日：40%<br>
+        ・当日：50%<br>
+        ・旅行開始後または無連絡不参加：100%<br>
+        変更・取消は（株）ツーリスト中部（TEL：052-409-8070）までご連絡ください。
+      </div>
     </div>
   </div>
 
