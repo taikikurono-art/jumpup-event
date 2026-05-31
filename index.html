@@ -399,6 +399,55 @@ body {
 .flow-body {}
 .flow-title { font-size: 13px; font-weight: 900; color: #1a2a3a; margin-bottom: 3px; }
 .flow-desc  { font-size: 12px; color: var(--sub); line-height: 1.7; }
+/* ── 満席バナー ── */
+.soldout-banner {
+  background: linear-gradient(135deg, #e24b4a, #b83030);
+  color: #fff;
+  padding: 1.25rem 1.5rem;
+  display: flex; align-items: center; gap: 1rem;
+  position: relative; overflow: hidden;
+}
+.soldout-banner::after {
+  content: '';
+  position: absolute; right: -20px; top: -20px;
+  width: 120px; height: 120px;
+  background: rgba(255,255,255,.08); border-radius: 50%;
+}
+.soldout-banner-icon { font-size: 36px; flex-shrink: 0; }
+.soldout-banner-body {}
+.soldout-banner-title {
+  font-size: 18px; font-weight: 900; margin-bottom: .3rem;
+  display: flex; align-items: center; gap: .5rem;
+}
+.soldout-stamp {
+  display: inline-block;
+  background: #fff; color: #e24b4a;
+  font-size: 11px; font-weight: 900;
+  padding: 2px 8px; border-radius: 20px;
+  letter-spacing: .05em; flex-shrink: 0;
+}
+.soldout-banner-sub { font-size: 12px; color: rgba(255,255,255,.88); line-height: 1.7; }
+.soldout-waitlist-btn {
+  display: block; width: 100%; margin-top: .75rem; padding: 13px;
+  background: #fff; font-family: inherit; font-size: 14px; font-weight: 900;
+  color: #e24b4a; border: 2px solid #e24b4a; border-radius: 12px;
+  cursor: pointer; text-align: center; text-decoration: none; transition: background .2s;
+}
+.soldout-waitlist-btn:hover { background: #fff5f5; }
+.apply-btn.soldout-apply-btn {
+  background: #ccc !important;
+  color: #888 !important;
+  cursor: not-allowed !important;
+  pointer-events: none;
+}
+/* ヒーローナビ 満席バッジ */
+.hero-nav-btn .soldout-tag {
+  background: #e24b4a; color: #fff;
+  font-size: 10px; font-weight: 900;
+  padding: 2px 7px; border-radius: 10px;
+  letter-spacing: .03em;
+}
+
 .coming-soon-box {
   background: #f6fbff;
   border: 1.5px dashed #a0c8e8;
@@ -496,7 +545,7 @@ body {
     <div class="hero-copy" style="font-size:13px;">ドキドキワクワクの宿泊イベント、JUMP UPにおまかせ！</div>
     <div class="hero-sub">全2イベント開催 ／ 年中〜小学生対象 ／ 一般募集あり</div>
     <div class="hero-nav">
-      <a class="hero-nav-btn" href="#ev-gujo">🌿 郡上ワクワクサマー</a>
+      <a class="hero-nav-btn" href="#ev-gujo">🌿 郡上ワクワクサマー <span class="soldout-tag">満席</span></a>
       <a class="hero-nav-btn" href="#ev-omachi">⛰️ 長野スプラッシュツアー</a>
     </div>
   </div>
@@ -506,13 +555,12 @@ body {
 
   <!-- ── お知らせバナー ── -->
   <div class="notice-banner">
-    <div class="notice-icon">🌻</div>
+    <div class="notice-icon">📢</div>
     <div class="notice-body">
-      <div class="notice-title">教室会員の皆さま・一般の方へ</div>
+      <div class="notice-title">【重要】郡上ワクワクサマー 満席のお知らせ</div>
       <div class="notice-text">
-        今年の夏も、子どもたちと一緒に思いきり自然を楽しむサマーイベントを開催予定です😊✨<br>
-        今年は教室会員の皆さまだけでなく、<strong>一般募集も行う予定</strong>です！<br>
-        毎年人気のイベントとなっておりますので、ぜひ先に日程だけ空けておいていただけたら嬉しいです🙌
+        郡上ワクワクサマー（7/19・20）は定員に達しました。たくさんのお申し込みをいただきありがとうございます🙏<br>
+        キャンセル待ちはLINEにてご連絡ください。<strong>長野スプラッシュツアー（8/24〜26）は引き続き受付中</strong>です！
       </div>
     </div>
   </div>
@@ -530,6 +578,22 @@ body {
         <span class="ev-pill">📍 岐阜県郡上周辺</span>
         <span class="ev-pill">👥 定員20名</span>
         <span class="ev-pill">🚌 金山・大曽根・春日井</span>
+      </div>
+    </div>
+    <!-- 満席バナー -->
+    <div class="soldout-banner">
+      <div class="soldout-banner-icon">🙏</div>
+      <div class="soldout-banner-body">
+        <div class="soldout-banner-title">
+          <span class="soldout-stamp">満　席</span>
+          受付終了いたしました
+        </div>
+        <div class="soldout-banner-sub">
+          たくさんのお申し込みをありがとうございます！<br>
+          定員20名に達したため、新規受付は終了しました。<br>
+          キャンセル待ちをご希望の方はLINEよりご連絡ください。
+        </div>
+        <a class="soldout-waitlist-btn" href="https://lin.ee/V8HhbJy" target="_blank">💬 キャンセル待ちをLINEで申し込む</a>
       </div>
     </div>
     <div class="ev-main-photo" id="photo-gujo">
@@ -631,12 +695,12 @@ body {
       </div>
 
       <!-- 残り枠 -->
-      <div class="ev-spots" style="display:none;">
+      <div class="ev-spots">
         <div class="spots-bar-wrap">
           <div class="spots-label">受付状況</div>
-          <div class="spots-bar"><div class="spots-fill fill-open" id="bar-gujo" style="width:0%"></div></div>
+          <div class="spots-bar"><div class="spots-fill fill-full" id="bar-gujo" style="width:100%"></div></div>
         </div>
-        <div class="spots-badge badge-loading" id="badge-gujo"><span class="skeleton"></span></div>
+        <div class="spots-badge badge-full" id="badge-gujo">受付終了</div>
       </div>
 
       <!-- 申込 -->
@@ -680,13 +744,12 @@ body {
         </div>
         <a class="apply-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSeq3qCPR6cXrJwO19SJCqxitF4SYDnjgebLMEIlpun5nwvq9A/viewform?usp=header" target="_blank">📝 申し込みフォームはこちら</a>
         <div class="after-apply-line">
-          <div class="after-apply-line-title">📲 フォーム送信後、必ずLINEへ！</div>
+          <div class="after-apply-line-title">📲 キャンセル待ちはLINEへ！</div>
           <div class="after-apply-line-body">
-            フォームを送信したら、下のボタンから公式LINEを開いて<br>
-            <strong>申し込まれたお子様のお名前</strong>をトーク画面に送信してください。<br>
-            お名前の送信をもって受付完了となります。
+            キャンセル待ちをご希望の方は、公式LINEよりお子様のお名前と「郡上キャンセル待ち希望」とお送りください。<br>
+            空きが出た場合はLINEにてご連絡いたします。
           </div>
-          <a class="after-apply-line-btn" href="https://lin.ee/V8HhbJy" target="_blank">💬 公式LINEを開く</a>
+          <a class="after-apply-line-btn" href="https://lin.ee/V8HhbJy" target="_blank">💬 公式LINEでキャンセル待ちを申し込む</a>
         </div>
       </div>
 
@@ -844,7 +907,7 @@ body {
             <div class="flow-bank-note">※必ず代表者様のお名前でお振込みください</div>
           </div>
         </div>
-        <a class="apply-btn" href="https://docs.google.com/forms/d/e/1FAIpQLScgrt5CbvnTi15wxsbMdbftQ8orzy0k57cOVjtF5reA1ehimA/viewform?usp=header" target="_blank">📝 申し込みフォームはこちら</a>
+        <a class="apply-btn soldout-apply-btn" href="#" onclick="return false;">受付終了</a>
         <div class="after-apply-line">
           <div class="after-apply-line-title">📲 フォーム送信後、必ずLINEへ！</div>
           <div class="after-apply-line-body">
@@ -970,6 +1033,8 @@ body {
   }
 
   function updateSpots(localId, ev) {
+    // 郡上は静的に満席表示済みのためスキップ
+    if (localId === 'gujo') return;
     const bar   = document.getElementById('bar-'           + localId);
     const badge = document.getElementById('badge-'         + localId);
     const btn   = document.getElementById('btn-'           + localId);
