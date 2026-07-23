@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>夏のイベント2026 | JUMP UP</title>
 <!-- OGP -->
-<meta name="description" content="JUMP UP 2026夏のイベント。郡上ワクワクサマー・長野県大町ツアーの2イベント開催。幼児〜小学生対象。オンライン申込受付中！">
+<meta name="description" content="JUMP UP 2026夏のイベント。長野スプラッシュツアー（受付中）・郡上ワクワクサマー（終了）の2イベント開催。幼児〜小学生対象。オンライン申込受付中！">
 <meta property="og:title" content="夏のイベント2026 | JUMP UP">
-<meta property="og:description" content="あそびの先に、成長がある夏へ。郡上・大町の2イベント開催。幼児〜小学生対象。">
+<meta property="og:description" content="あそびの先に、成長がある夏へ。長野・大町の2泊3日、絶賛受付中。幼児〜小学生対象。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://taikikurono-art.github.io/jumpup-event/">
 <meta property="og:image" content="https://taikikurono-art.github.io/jumpup-event/ogp.png">
@@ -219,6 +219,43 @@ body {
 .ev-1 .timeline-dot { background: #2eaa6e; }
 .ev-2 .timeline-dot { background: #1a6fc0; }
 .timeline-item span { color: var(--text); font-weight: 700; }
+
+.sensei-bubble {
+  display: flex; gap: 8px; align-items: flex-start;
+  margin-top: 6px;
+}
+.sensei-avatar {
+  width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg, #1a8fd1, #0a5a8c);
+  color: #fff; font-size: 14px;
+  display: flex; align-items: center; justify-content: center;
+}
+.sensei-bubble-content {
+  position: relative;
+  background: #fff8e6; border: 1px solid #ffe4a0;
+  border-radius: 4px 12px 12px 12px;
+  padding: .55rem .8rem;
+  font-size: 12px; color: #5a4000; line-height: 1.75;
+}
+.sensei-name {
+  font-size: 10px; font-weight: 900; color: #a06000; margin-bottom: 2px;
+}
+
+.program-intro-title { font-size: 16px; font-weight: 900; color: var(--text); margin-bottom: .5rem; }
+.program-intro-sub   { font-size: 13px; font-weight: 700; color: #1a6fc0; margin-bottom: .9rem; }
+.program-intro-body  { font-size: 13px; color: var(--sub); line-height: 1.9; margin-bottom: .7rem; }
+.program-intro-body:last-child { margin-bottom: 0; }
+
+.day-sub { font-size: 12px; color: var(--sub); font-weight: 700; margin-bottom: .9rem; }
+
+.program-block { padding: 1rem 0; border-bottom: 1px dashed var(--border); }
+.program-block:last-child { border-bottom: none; padding-bottom: 0; }
+.program-title { font-size: 14px; font-weight: 900; color: var(--text); margin-bottom: .5rem; line-height: 1.5; }
+.program-desc  { font-size: 13px; color: var(--sub); line-height: 1.85; margin-bottom: .7rem; }
+
+.program-closing { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid var(--border); }
+.program-closing-title { font-size: 15px; font-weight: 900; color: var(--text); margin-bottom: .7rem; line-height: 1.5; }
+.program-closing-body  { font-size: 13px; color: var(--sub); line-height: 1.9; }
 
 /* 宿泊情報 */
 .ev-stay {
@@ -540,13 +577,13 @@ body {
 <!-- ── HERO ── -->
 <div class="hero">
   <div class="hero-inner">
-    <div class="hero-notice">🌻 2026 サマーイベント 開催予定のお知らせ</div>
+    <div class="hero-notice">🌻 2026 サマーイベント 募集中のお知らせ</div>
     <div class="hero-title" style="font-size:20px;">夏を、思いっきり遊びつくそう！</div>
     <div class="hero-copy" style="font-size:13px;">ドキドキワクワクの宿泊イベント、JUMP UPにおまかせ！</div>
     <div class="hero-sub">全2イベント開催 ／ 年中〜小学生対象 ／ 一般募集あり</div>
     <div class="hero-nav">
-      <a class="hero-nav-btn" href="#ev-gujo">🌿 郡上ワクワクサマー <span class="soldout-tag">満席</span></a>
       <a class="hero-nav-btn" href="#ev-omachi">⛰️ 長野スプラッシュツアー</a>
+      <a class="hero-nav-btn" href="#ev-gujo">🌿 郡上ワクワクサマー <span class="soldout-tag">終了</span></a>
     </div>
   </div>
 </div>
@@ -557,11 +594,216 @@ body {
   <div class="notice-banner">
     <div class="notice-icon">📢</div>
     <div class="notice-body">
-      <div class="notice-title">【重要】郡上ワクワクサマー 満席のお知らせ</div>
+      <div class="notice-title">【長野スプラッシュツアー移動方法が変わりました！】</div>
       <div class="notice-text">
-        郡上ワクワクサマー（7/19・20）は定員に達しました。たくさんのお申し込みをいただきありがとうございます🙏<br>
-        キャンセル待ちはLINEにてご連絡ください。<strong>長野スプラッシュツアー（8/24〜26）は引き続き受付中</strong>です！
+        特急しなの＋レンタカーでの移動となりました！集合解散は千種駅です。長野スプラッシュツアー（8/24〜26）の締め切りは8月7日（金）です。
       </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       イベント2：長野スプラッシュツアー
+  ══════════════════════════════════ -->
+  <div class="event-section ev-2" id="ev-omachi">
+    <div class="event-header">
+      <div class="ev-num">⛰️ 2026夏、いちばんのおすすめ</div>
+      <div class="ev-title">長野スプラッシュツアー</div>
+      <div class="ev-pills">
+        <span class="ev-pill">📅 8月24日（月）〜26日（水）</span>
+        <span class="ev-pill">👦 小学生対象</span>
+        <span class="ev-pill">📍 長野県大町市周辺</span>
+        <span class="ev-pill">👥 定員12名（残り9名）</span>
+        <span class="ev-pill">⏰ 8月7日(金)締切</span>
+        <span class="ev-pill">🚆 千種駅集合（特急しなの）</span>
+      </div>
+    </div>
+    <div class="ev-main-photo" id="photo-omachi">
+      <img src="images/omachi-main.jpg" alt="大町ツアーの様子" onerror="this.parentElement.classList.add('no-photo')">
+      <div class="ev-main-photo-overlay"></div>
+      <div class="ev-photo-placeholder">
+        <div class="ev-photo-placeholder-icon">📸</div>
+        <div class="ev-photo-placeholder-text">images/omachi-main.jpg をアップロード</div>
+      </div>
+    </div>
+    <div class="event-body">
+
+      <div class="ev-catch">
+        <div class="program-intro-title">🌿長野・北アルプス自然体験ツアー</div>
+        <div class="program-intro-sub">3日間の主なプログラムをご紹介します！🏔️✨</div>
+        <div class="program-intro-body">雄大な北アルプスの景色、雪解け水を使ったダイナミックな水遊び、工場見学やブルーベリー狩り。<br>今回の長野ツアーでは、普段の生活ではなかなか味わうことのできない、長野の自然や文化をたっぷりと体験します🌿</div>
+        <div class="program-intro-body">子どもたちにとっては、家族と離れて仲間と過ごす2泊3日。<br>楽しいだけではなく、自分で考えて行動すること、初めて出会う友達と関係をつくること、身の回りのことに挑戦することなど、さまざまな成長につながる時間にしていきたいと思っています😊</div>
+      </div>
+
+      <!-- タイムライン -->
+      <div class="ev-timeline">
+        <div class="ev-section-title">🌿 主なプログラム予定</div>
+
+        <div class="day-block">
+          <div class="day-label">🌱 1日目</div>
+          <div class="day-sub">新しい仲間と出会い、長野の自然に触れる一日</div>
+        <div class="program-block">
+          <div class="program-title">🚆千種駅集合・特急しなので出発！</div>
+          <div class="program-desc">千種駅を8時06分に出発し、特急しなので松本駅へ向かいます。<br>松本駅には10時15分頃に到着予定です。</div>
+          <div class="sensei-bubble"><div class="sensei-avatar">💡</div><div class="sensei-bubble-content"><div class="sensei-name">プログラムのポイント</div>バス移動とはひと味違う、電車ならではの旅の時間🚃✨<br>窓の外に広がる景色を眺めたり、座席を移動しながらお友達と話したり。初めて会う子ども同士でも、自然と会話が生まれていきます。<br>長野に到着する前から、子どもたちの新しい出会いと成長は始まっています🌱</div></div>
+        </div>
+        <div class="program-block">
+          <div class="program-title">🚐レンタカーで大町エリアへ</div>
+          <div class="program-desc">松本駅からレンタカーに乗り換え、道の駅「安曇野松川」に立ち寄りながら大町エリアへ向かいます。</div>
+          <div class="sensei-bubble"><div class="sensei-avatar">💡</div><div class="sensei-bubble-content"><div class="sensei-name">プログラムのポイント</div>安曇野から望む北アルプスの山々は、思わず立ち止まって眺めたくなるほどの絶景です🏔️✨<br>道の駅でひと休みしながら、名古屋では見ることのできない雄大な景色を、子どもたちの目と心にしっかりと焼き付けてほしいと思っています。<br>写真だけでは伝わらない山の大きさや空気を、全身で感じる時間です🌿</div></div>
+        </div>
+        <div class="program-block">
+          <div class="program-title">🏭<a href="https://www.suntory.co.jp/factory/kitaalps/" target="_blank" class="spot-link">サントリー天然水 北アルプス信濃の森工場</a>見学</div>
+          <div class="program-desc">「おいしい水」がどのように生まれ、私たちのもとへ届くのかを、楽しく学べる工場見学ツアーに参加します💧<br>到着後は、北アルプスを望む広場でお弁当タイム🍙<br>工場見学のあとは、広場でのびのびと遊びます。</div>
+          <div class="sensei-bubble"><div class="sensei-avatar">💡</div><div class="sensei-bubble-content"><div class="sensei-name">プログラムのポイント</div>工場だけでなく、森や自然と一体になった広大な施設も大きな魅力です🌲<br>北アルプスを眺めながら食べるお弁当は、いつものお弁当とはひと味違う、最高のごちそうになるはずです😊<br>普段何気なく飲んでいる水が、森に降った雨や雪から、どのような時間をかけて生まれるのか。<br>見て、聞いて、感じながら、「おいしい水」ができるまでの物語を五感で学びます💧✨</div></div>
+        </div>
+        <div class="program-block">
+          <div class="program-title">🎉ロッジでグループタイム</div>
+          <div class="program-desc">夜はロッジに戻り、仲間と一緒にゆっくりと過ごします🌙</div>
+          <div class="sensei-bubble"><div class="sensei-avatar">💡</div><div class="sensei-bubble-content"><div class="sensei-name">プログラムのポイント</div>ツアー初日の夜は、楽しみな気持ちがある一方で、誰でも少し心細くなるものです。<br>だからこそ、みんなで話したり、笑ったり、遊んだりする時間を大切にします😊<br>一日を一緒に過ごした仲間との距離がグッと近づき、「明日も一緒に遊びたい！」と思えるような夜にしていきます✨</div></div>
+        </div>
+        </div>
+
+        <div class="day-block">
+          <div class="day-label">🌊 2日目</div>
+          <div class="day-sub">北アルプスの自然の中で、思いっきり遊ぶ一日</div>
+        <div class="program-block">
+          <div class="program-title">💦国営アルプスあづみの公園・スプラッシュリバー</div>
+          <div class="program-desc">国営アルプスあづみの公園の大町・松川地区で、ダイナミックな水遊びを楽しみます！</div>
+          <div class="sensei-bubble"><div class="sensei-avatar">💡</div><div class="sensei-bubble-content"><div class="sensei-name">プログラムのポイント</div>頭上から勢いよく降り注ぐ川の水は、思わず歓声が上がるほどの迫力です🌊✨<br>北アルプスの雪解け水ならではの冷たさと、広い自然の中で水を浴びる開放感。<br>全身びしょ濡れになりながら、暑い夏を思いっきり楽しみます！<br>水の冷たさ、流れる勢い、自然の音。ここでしか味わうことのできない、特別な水遊び体験です💦</div></div>
+        </div>
+        <div class="program-block">
+          <div class="program-title">🚶国営アルプスあづみの公園を散策</div>
+          <div class="program-desc">水遊びだけでなく、広大な園内を歩きながら、さまざまな遊びや自然体験を楽しみます🌳</div>
+          <div class="sensei-bubble"><div class="sensei-avatar">💡</div><div class="sensei-bubble-content"><div class="sensei-name">プログラムのポイント</div>空中回廊や室内アスレチック、自然展示室など、園内には子どもたちの好奇心を刺激する場所がたくさんあります✨<br>「次はどこに行こう？」<br>「こんなものを見つけた！」<br>仲間と相談しながら、さまざまな遊びポイントを巡ります。<br>公園と森の境目は柵で囲まれ、園内にはクマよけの鈴も設置されています🐻🔔<br>安全に配慮された環境の中で、長野の自然を身近に感じていきます。</div></div>
+        </div>
+        <div class="program-block">
+          <div class="program-title">📮旅の思い出を形にする記念品づくり</div>
+          <div class="program-desc">サントリー工場で購入したポストカードと木材を使い、自然を感じられる記念品を作ります🌿</div>
+          <div class="sensei-bubble"><div class="sensei-avatar">💡</div><div class="sensei-bubble-content"><div class="sensei-name">プログラムのポイント</div>ツアー最後の夜は、この3日間をゆっくりと振り返りながら、心を込めて記念品を作ります。<br>ポストカードには、<br>「一番楽しかったこと」<br>「初めて挑戦したこと」<br>「心に残った景色」<br>「家族に伝えたいこと」<br>など、子どもたちが旅の中で感じたことを、それぞれの言葉や絵で表現します✏️<br>完成したポストカードは、後日ご自宅へ郵送でお届けします📮✨<br>ツアーが終わったあと、子どもたちから届く旅の思い出を、ぜひ楽しみにお待ちください。</div></div>
+        </div>
+        </div>
+
+        <div class="day-block">
+          <div class="day-label">🫐 3日目</div>
+          <div class="day-sub">長野の夏を味わい、思いっきり遊び尽くす一日</div>
+        <div class="program-block">
+          <div class="program-title">🫐村山ブルーベリー園でブルーベリー狩り</div>
+          <div class="program-desc">安曇野の農園で、時間無制限のブルーベリー食べ放題を楽しみます！<br>園内には、ひまわり迷路もあります🌻</div>
+          <div class="sensei-bubble"><div class="sensei-avatar">💡</div><div class="sensei-bubble-content"><div class="sensei-name">プログラムのポイント</div>電車とレンタカーを使った移動だからこそ実現した、今回のツアーの新プログラムです🚆🚐✨<br>標高の高い長野では、8月後半でも甘く熟したブルーベリーを収穫することができます。<br>木によって少しずつ違う大きさや色、甘さを比べながら、<br>「こっちの実は甘い！」<br>「大きなブルーベリーを見つけた！」<br>と、自分のお気に入りを探していきます😊<br>自分の手で摘み、その場で味わうからこそ感じられる、夏の特別な体験です🫐<br>時間を気にせず、お腹いっぱい長野の夏を味わいます！</div></div>
+        </div>
+        <div class="program-block">
+          <div class="program-title">💦国営アルプスあづみの公園・堀金・穂高地区で水遊び</div>
+          <div class="program-desc">大きな水遊び場と広大な芝生エリアで、ツアー最後の時間を過ごします。<br>お昼のお弁当も、こちらの公園でいただきます🍙</div>
+          <div class="sensei-bubble"><div class="sensei-avatar">💡</div><div class="sensei-bubble-content"><div class="sensei-name">プログラムのポイント</div>国営アルプスあづみの公園には、大町・松川地区と堀金・穂高地区があり、それぞれ違った魅力があります🌳<br>最終日に訪れる堀金・穂高地区の水遊び場は、浅く広々としており、仲間と一緒に思いっきり遊べる場所です💦<br>水をかけ合ったり、走り回ったり、芝生で休憩したり。<br>3日間を一緒に過ごした仲間と、最後まで笑顔いっぱいに遊び尽くします！</div></div>
+        </div>
+        <div class="program-block">
+          <div class="program-title">🚆松本駅へ移動・特急しなので千種駅へ</div>
+          <div class="program-desc">レンタカーを返却したあと、松本駅から14時54分発の特急しなのに乗車します。<br>千種駅には17時頃に到着し、解散予定です。</div>
+          <div class="sensei-bubble"><div class="sensei-avatar">💡</div><div class="sensei-bubble-content"><div class="sensei-name">プログラムのポイント</div>帰りの車窓から、北アルプスの景色をもう一度眺めます🏔️<br>行きの電車では少し緊張していた子どもたちも、帰りにはすっかり仲良しに。<br>「水遊びが楽しかった！」<br>「ブルーベリーがおいしかった！」<br>「またみんなで行きたい！」<br>電車の中は、きっと旅の思い出話でいっぱいになります🚃✨<br>名古屋に着く頃には、たくさんの経験と思い出を胸に、子どもたちは少し頼もしい表情になっているはずです。</div></div>
+        </div>
+        </div>
+
+        <div class="program-closing">
+          <div class="program-closing-title">🌈楽しいだけでは終わらない、2泊3日の長野ツアー</div>
+          <div class="program-closing-body">
+            雄大な自然の中で思いっきり遊ぶこと。<br>
+            初めて出会った仲間と一緒に生活すること。<br>
+            自分のことを自分で行うこと。<br>
+            家族と離れた場所で、新しいことに挑戦すること。<br>
+            一つひとつの経験が、子どもたちの自信と成長につながっていきます🌱<br>
+            長野の自然を全身で味わいながら、子どもたちにとって忘れられない夏の思い出を、仲間と一緒につくっていきたいと思います😊🏔️✨
+          </div>
+        </div>
+      </div>
+
+      <!-- 宿泊 -->
+      <div class="ev-stay ev-stay-col">
+        <div class="ev-stay-top">
+          <div class="ev-stay-icon">🏡</div>
+          <div class="ev-stay-info">
+            <div class="ev-stay-label">宿泊施設</div>
+            <div class="ev-stay-name">マルハンロッジ</div>
+            <div class="ev-stay-loc">📍 長野県大町市大字平4817</div>
+          </div>
+        </div>
+        <div class="stay-slider">
+          <div class="stay-slider-track" id="maruhan-track">
+            <img src="images/maruhan-1.jpg" alt="マルハンロッジ1" class="stay-slide">
+            <img src="images/maruhan-2.jpg" alt="マルハンロッジ2" class="stay-slide">
+            <img src="images/maruhan-3.jpg" alt="マルハンロッジ3" class="stay-slide">
+          </div>
+          <div class="stay-dots" id="maruhan-dots">
+            <span class="stay-dot active" onclick="goSlide(0)"></span>
+            <span class="stay-dot" onclick="goSlide(1)"></span>
+            <span class="stay-dot" onclick="goSlide(2)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 残り枠 -->
+      <div class="ev-spots" style="display:none;">
+        <div class="spots-bar-wrap">
+          <div class="spots-label">受付状況</div>
+          <div class="spots-bar"><div class="spots-fill fill-open" id="bar-omachi" style="width:0%"></div></div>
+        </div>
+        <div class="spots-badge badge-loading" id="badge-omachi"><span class="skeleton"></span></div>
+      </div>
+
+      <!-- 申込 -->
+      <div class="ev-apply">
+        <div class="pre-note">
+          <strong>⏰ 募集締切：8月7日（金）</strong>
+          定員12名のうち、現在3名のお申し込みをいただいています（残り9名）。少人数ツアーですので、お早めにお申し込みください。
+        </div>
+        <div class="price-box">
+          <div class="price-title">💴 参加費</div>
+          <div class="price-row"><span class="price-label">会員</span><span class="price-val">49,800円</span></div>
+          <div class="price-row"><span class="price-label">一般</span><span class="price-val">59,800円</span></div>
+        </div>
+        <div class="agency-box">
+          <div class="agency-title">🏢 旅行企画・実施・お支払先</div>
+          <div class="agency-name">（株）ツーリスト中部</div>
+          <div class="agency-info">愛知県知事登録旅行業第2−1133号</div>
+          <div class="agency-info">総合旅行業務取扱管理者　岩井 優作</div>
+          <div class="agency-info">〒452-0903 愛知県清須市助七1-176 片岡ビル1階</div>
+          <div class="agency-info">TEL：052-409-8070　FAX：052-409-9130</div>
+        </div>
+        <div class="agency-box" style="margin-top:.75rem;">
+          <div class="agency-title">🏦 お振込先</div>
+          <div class="agency-name" style="font-size:13px;">三菱UFJ銀行（0005）尾張新川支店（894）</div>
+          <div class="agency-info">普通預金　口座番号：4609904　口座名義：カ）ツーリストチューブ</div>
+          <div class="agency-info" style="margin-top:.4rem; color:#e24b4a; font-weight:700;">※必ず代表者様のお名前でお振込みください</div>
+          <div class="agency-info">※振込手数料はご負担ください</div>
+          <div class="agency-info">※振込受領書が領収書となります</div>
+        </div>
+        <div class="flow-box">
+          <div class="flow-box-title">📋 申込後の流れ</div>
+          <div class="flow-mini-list">
+            <div class="flow-mini-item"><span class="flow-mini-num">1</span><span>フォームを送信</span></div>
+            <div class="flow-mini-item"><span class="flow-mini-num">2</span><span>LINEにお子さんの名前を送る（以降LINEでやりとり）</span></div>
+            <div class="flow-mini-item"><span class="flow-mini-num">3</span><span>8月8日までに詳細をLINEでお知らせ</span></div>
+            <div class="flow-mini-item"><span class="flow-mini-num">4</span><span>8月14日までに参加費をお振込み</span></div>
+            <div class="flow-mini-item"><span class="flow-mini-num">🎒</span><span>当日！いってらっしゃい</span></div>
+          </div>
+          <div class="flow-bank">
+            <div class="flow-bank-title">🏦 お振込先</div>
+            <div class="flow-bank-info">三菱UFJ銀行（0005）尾張新川支店（894）</div>
+            <div class="flow-bank-info">普通預金　口座番号：4609904　口座名義：カ）ツーリストチューブ</div>
+            <div class="flow-bank-note">※必ず代表者様のお名前でお振込みください</div>
+          </div>
+        </div>
+        <a class="apply-btn" href="https://docs.google.com/forms/d/e/1FAIpQLScgrt5CbvnTi15wxsbMdbftQ8orzy0k57cOVjtF5reA1ehimA/viewform?usp=header" target="_blank">📝 申し込みフォームはこちら</a>
+        <div class="after-apply-line">
+          <div class="after-apply-line-title">📲 フォーム送信後、必ずLINEへ！</div>
+          <div class="after-apply-line-body">
+            フォームを送信したら、下のボタンから公式LINEを開いて<br>
+            <strong>申し込まれたお子様のお名前</strong>をトーク画面に送信してください。<br>
+            お名前の送信をもって受付完了となります。
+          </div>
+          <a class="after-apply-line-btn" href="https://lin.ee/Ow4XgnL" target="_blank">💬 公式LINEを開く</a>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -576,7 +818,7 @@ body {
         <span class="ev-pill">📅 7月19日（日）・20日（月）</span>
         <span class="ev-pill">👦 年中〜小学1年生</span>
         <span class="ev-pill">📍 岐阜県郡上周辺</span>
-        <span class="ev-pill">👥 定員に達しました</span>
+        <span class="ev-pill">👥 開催終了</span>
         <span class="ev-pill">🚌 金山・大曽根・春日井</span>
       </div>
     </div>
@@ -585,15 +827,13 @@ body {
       <div class="soldout-banner-icon">🙏</div>
       <div class="soldout-banner-body">
         <div class="soldout-banner-title">
-          <span class="soldout-stamp">満　席</span>
-          受付終了いたしました
+          <span class="soldout-stamp">終　了</span>
+          ツアーは終了しました
         </div>
         <div class="soldout-banner-sub">
-          たくさんのお申し込みをありがとうございます！<br>
-          定員に達したため、新規受付は終了しました。<br>
-          キャンセル待ちをご希望の方はLINEよりご連絡ください。
+          たくさんのお申し込み・ご参加ありがとうございました！<br>
+          郡上ワクワクサマーは無事終了しました。来年もお楽しみに🌿
         </div>
-        <a class="soldout-waitlist-btn" href="https://lin.ee/Ow4XgnL" target="_blank">💬 キャンセル待ちをLINEで申し込む</a>
       </div>
     </div>
     <div class="ev-main-photo" id="photo-gujo">
@@ -750,172 +990,6 @@ body {
             空きが出た場合はLINEにてご連絡いたします。
           </div>
           <a class="after-apply-line-btn" href="https://lin.ee/Ow4XgnL" target="_blank">💬 公式LINEでキャンセル待ちを申し込む</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════
-       イベント2：長野スプラッシュツアー
-  ══════════════════════════════════ -->
-  <div class="event-section ev-2" id="ev-omachi">
-    <div class="event-header">
-      <div class="ev-num">⛰️ サマーイベント第二弾</div>
-      <div class="ev-title">長野スプラッシュツアー</div>
-      <div class="ev-pills">
-        <span class="ev-pill">📅 8月24日（月）〜26日（水）</span>
-        <span class="ev-pill">👦 小学生対象</span>
-        <span class="ev-pill">📍 長野県大町市周辺</span>
-        <span class="ev-pill">👥 定員35名</span>
-        <span class="ev-pill">🚌 金山・大曽根・春日井</span>
-      </div>
-    </div>
-    <div class="ev-main-photo" id="photo-omachi">
-      <img src="images/omachi-main.jpg" alt="大町ツアーの様子" onerror="this.parentElement.classList.add('no-photo')">
-      <div class="ev-main-photo-overlay"></div>
-      <div class="ev-photo-placeholder">
-        <div class="ev-photo-placeholder-icon">📸</div>
-        <div class="ev-photo-placeholder-text">images/omachi-main.jpg をアップロード</div>
-      </div>
-    </div>
-    <div class="event-body">
-
-      <div class="ev-catch">
-        2泊でしか味わえない、アルプスの景色・自然の大切さ・水の気持ちよさを全身で。<br>
-        水遊び・クイズ大会・宝探し・工場見学まで、小学生だからこそできる特別な夏がここにあります。
-      </div>
-
-      <div class="ev-highlights">
-        <div class="ev-hl">
-          <span class="ev-hl-icon">🏕️</span>
-          <div class="ev-hl-label">スタイル</div>
-          <div class="ev-hl-val">2泊3日</div>
-        </div>
-        <div class="ev-hl">
-          <span class="ev-hl-icon">⛰️</span>
-          <div class="ev-hl-label">エリア</div>
-          <div class="ev-hl-val">長野県大町</div>
-        </div>
-        <div class="ev-hl">
-          <span class="ev-hl-icon">🔥</span>
-          <div class="ev-hl-label">難易度</div>
-          <div class="ev-hl-val">初心者〜中級</div>
-        </div>
-      </div>
-
-      <!-- タイムライン -->
-      <div class="ev-timeline">
-        <div class="ev-section-title">🌿 主なプログラム予定</div>
-
-        <div class="day-block">
-          <div class="day-label">1日目</div>
-          <ul class="timeline-list">
-            <li class="timeline-item"><span class="timeline-dot"></span><div><span><a href="https://www.azumino-koen.jp/horigane_hotaka/new/topics.php?id=2959" target="_blank" class="spot-link">国営アルプスあづみの公園（堀金地区）</a>で水遊び💦</span>　大きな水遊び場と広大な芝生エリアが気持ちいい！思いきり遊ぼう。</div></li>
-            <li class="timeline-item"><span class="timeline-dot"></span><div><span>グループタイム</span>　仲間と打ち解ける時間</div></li>
-            <li class="timeline-item"><span class="timeline-dot"></span><div><span>水にまつわるクイズ大会💧</span>　アルプスの水・自然のふしぎを楽しく学ぼう。チームで力を合わせて正解を目指せ！</div></li>
-          </ul>
-        </div>
-
-        <div class="day-block">
-          <div class="day-label">2日目</div>
-          <ul class="timeline-list">
-            <li class="timeline-item"><span class="timeline-dot"></span><div><span><a href="https://www.azumino-koen.jp/oomachi_matsukawa/new/topics.php?id=2957" target="_blank" class="spot-link">国営アルプスあづみの公園（大町地区）</a>スプラッシュリバーで水遊び🌊</span>　広大な公園でダイナミックな水遊び。昨日とは違う楽しさが待ってる！</div></li>
-            <li class="timeline-item"><span class="timeline-dot"></span><div><span>グループ対抗ポイントラリー🗺️</span>　広大な公園内でグループの力を合わせ、ポイントをまわってゴールを目指そう！</div></li>
-            <li class="timeline-item"><span class="timeline-dot"></span><div><span>夜のグループ出しもの大会✨</span>　グループごとに出し物を考えて発表！みんなで盛り上がろう。</div></li>
-          </ul>
-        </div>
-
-        <div class="day-block">
-          <div class="day-label">3日目</div>
-          <ul class="timeline-list">
-            <li class="timeline-item"><span class="timeline-dot"></span><div><span><a href="https://www.suntory.co.jp/factory/kitaalps/" target="_blank" class="spot-link">サントリー天然水工場（北アルプス）</a>見学🏭</span>　大町が誇るアルプスの天然水。おいしい水ができるまでの工程を楽しく学べるツアーに参加。</div></li>
-            <li class="timeline-item"><span class="timeline-dot"></span><div><span>自然の中でグループお弁当🍱</span>　きれいな自然が広がる工場敷地内で、グループごとに好きな場所を見つけてお弁当タイム。</div></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- 宿泊 -->
-      <div class="ev-stay ev-stay-col">
-        <div class="ev-stay-top">
-          <div class="ev-stay-icon">🏡</div>
-          <div class="ev-stay-info">
-            <div class="ev-stay-label">宿泊施設</div>
-            <div class="ev-stay-name">マルハンロッジ</div>
-            <div class="ev-stay-loc">📍 長野県大町市大字平4817</div>
-          </div>
-        </div>
-        <div class="stay-slider">
-          <div class="stay-slider-track" id="maruhan-track">
-            <img src="images/maruhan-1.jpg" alt="マルハンロッジ1" class="stay-slide">
-            <img src="images/maruhan-2.jpg" alt="マルハンロッジ2" class="stay-slide">
-            <img src="images/maruhan-3.jpg" alt="マルハンロッジ3" class="stay-slide">
-          </div>
-          <div class="stay-dots" id="maruhan-dots">
-            <span class="stay-dot active" onclick="goSlide(0)"></span>
-            <span class="stay-dot" onclick="goSlide(1)"></span>
-            <span class="stay-dot" onclick="goSlide(2)"></span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 残り枠 -->
-      <div class="ev-spots" style="display:none;">
-        <div class="spots-bar-wrap">
-          <div class="spots-label">受付状況</div>
-          <div class="spots-bar"><div class="spots-fill fill-open" id="bar-omachi" style="width:0%"></div></div>
-        </div>
-        <div class="spots-badge badge-loading" id="badge-omachi"><span class="skeleton"></span></div>
-      </div>
-
-      <!-- 申込 -->
-      <div class="ev-apply">
-        <div class="price-box">
-          <div class="price-title">💴 参加費</div>
-          <div class="price-row"><span class="price-label">会員</span><span class="price-val">49,800円</span></div>
-          <div class="price-row"><span class="price-label">一般</span><span class="price-val">59,800円</span></div>
-        </div>
-        <div class="agency-box">
-          <div class="agency-title">🏢 旅行企画・実施・お支払先</div>
-          <div class="agency-name">（株）ツーリスト中部</div>
-          <div class="agency-info">愛知県知事登録旅行業第2−1133号</div>
-          <div class="agency-info">総合旅行業務取扱管理者　岩井 優作</div>
-          <div class="agency-info">〒452-0903 愛知県清須市助七1-176 片岡ビル1階</div>
-          <div class="agency-info">TEL：052-409-8070　FAX：052-409-9130</div>
-        </div>
-        <div class="agency-box" style="margin-top:.75rem;">
-          <div class="agency-title">🏦 お振込先</div>
-          <div class="agency-name" style="font-size:13px;">三菱UFJ銀行（0005）尾張新川支店（894）</div>
-          <div class="agency-info">普通預金　口座番号：4609904　口座名義：カ）ツーリストチューブ</div>
-          <div class="agency-info" style="margin-top:.4rem; color:#e24b4a; font-weight:700;">※必ず代表者様のお名前でお振込みください</div>
-          <div class="agency-info">※振込手数料はご負担ください</div>
-          <div class="agency-info">※振込受領書が領収書となります</div>
-        </div>
-        <div class="flow-box">
-          <div class="flow-box-title">📋 申込後の流れ</div>
-          <div class="flow-mini-list">
-            <div class="flow-mini-item"><span class="flow-mini-num">1</span><span>フォームを送信</span></div>
-            <div class="flow-mini-item"><span class="flow-mini-num">2</span><span>LINEにお子さんの名前を送る（以降LINEでやりとり）</span></div>
-            <div class="flow-mini-item"><span class="flow-mini-num">3</span><span>出発20日前までに参加費をお振込み</span></div>
-            <div class="flow-mini-item"><span class="flow-mini-num">4</span><span>出発2週間前までに詳細をLINEでお知らせ</span></div>
-            <div class="flow-mini-item"><span class="flow-mini-num">🎒</span><span>当日！いってらっしゃい</span></div>
-          </div>
-          <div class="flow-bank">
-            <div class="flow-bank-title">🏦 お振込先</div>
-            <div class="flow-bank-info">三菱UFJ銀行（0005）尾張新川支店（894）</div>
-            <div class="flow-bank-info">普通預金　口座番号：4609904　口座名義：カ）ツーリストチューブ</div>
-            <div class="flow-bank-note">※必ず代表者様のお名前でお振込みください</div>
-          </div>
-        </div>
-        <a class="apply-btn" href="https://docs.google.com/forms/d/e/1FAIpQLScgrt5CbvnTi15wxsbMdbftQ8orzy0k57cOVjtF5reA1ehimA/viewform?usp=header" target="_blank">📝 申し込みフォームはこちら</a>
-        <div class="after-apply-line">
-          <div class="after-apply-line-title">📲 フォーム送信後、必ずLINEへ！</div>
-          <div class="after-apply-line-body">
-            フォームを送信したら、下のボタンから公式LINEを開いて<br>
-            <strong>申し込まれたお子様のお名前</strong>をトーク画面に送信してください。<br>
-            お名前の送信をもって受付完了となります。
-          </div>
-          <a class="after-apply-line-btn" href="https://lin.ee/Ow4XgnL" target="_blank">💬 公式LINEを開く</a>
         </div>
       </div>
 
